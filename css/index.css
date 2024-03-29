@@ -1,0 +1,361 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(0, 128, 128);
+}
+
+
+
+body{
+  background-color: white;
+  color: rgb(6, 81, 174, 1);
+  /* background-image: url('./images/516431-PIWSFM-401.jpg'); */
+}
+
+header{
+  background: linear-gradient(200deg, rgb(113, 255, 224) 0.9%, teal 40.96%);
+  
+}
+
+.subnav{
+  padding: 1rem 0.7rem;
+  display: flex;
+  gap: 10%;
+}
+
+.subnav button{
+  padding: 0.4rem 1rem;
+  color: rgb(18, 21, 34);
+  font-weight: bold;
+  border-style: none;
+}
+
+.subnav input{
+  width: 80%;
+  color: rgb(0, 128, 128);
+  border-radius: 7px;
+  border-style: none;
+  padding: 0rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.473);
+  border: none;
+  box-shadow: 1px 1px 15px rgba(20, 80, 170, 0.199);
+}
+
+nav{
+  margin: 0;
+  padding: 0;
+}
+
+nav img{
+  width: 22%;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -80%;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 2px 7px black;
+}
+
+.menu ul li a{
+  color: #008080;
+  text-decoration: none;
+}
+.menu.open {
+  left: 0;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu ul li {
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #555;
+}
+.menu ul li:hover {
+  background-color:  white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+}
+
+.menu-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable snapping to each image */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  width: calc(100vw - 40px); /* Set container width to accommodate 5 images */
+  margin: 0px; /* Add margin for spacing */
+  width: 100%;
+  color:rgb(182, 255, 255);
+}
+.menu-item {
+  scroll-snap-align: start; /* Snap to the start of each image */
+  flex: 0 0 calc(20vw - 8px); /* Set width of each image (20% of viewport width) */
+  margin-right: 8px; /* Add margin for spacing between images */
+  text-align: center;
+  color: rgb(225, 255, 255);
+  font-size: 75%;
+  font-weight: bold;
+}
+.menu-item:last-child {
+  margin-right: 0; /* Remove margin from the last image */
+}
+.menu-item img {
+  width: 100%; /* Make images fill their parent container */
+  height: auto;
+  border-radius: 20rem;
+  background-color: rgb(225, 255, 255);
+}
+
+@media  screen and (min-width: 350px) and (max-width: 850px){
+  .firstcontainer .content img{
+    width: 100%;
+  }
+
+  .firstcontainer .content{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.firstcontainer{
+  text-align: center;
+  background-color: rgba(225, 69, 48, 0.113);
+}
+
+.firstcontainer p{
+  padding: 1rem;
+  color: blue;
+}
+
+.firstcontainer button{
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  background-color: rgb(133, 1, 1);
+  color: rgb(225, 69, 48);
+  border-style: none;
+  box-shadow: 2px 2px 7px black;
+}
+
+
+.firstcontainer button:hover{
+  padding: 0.5rem 2rem;
+  background-color: white;
+  transition: 0.2s ease-in;
+}
+
+.firstcontainer .content{
+  display: flex;
+  padding: 0rem 1rem;
+  justify-content: space-around;
+  background: linear-gradient(310deg, rgba(113, 255, 224, 0.527) 0.9%, rgb(144, 21, 21) 15.9%, rgba(133, 1, 1, 0) 10.9%, rgb(144, 21, 21) 55.9%, teal 0.96%);
+}
+
+.firstcontainer .content img{
+  width: 50%;
+}
+
+.intro{
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  font-size: 20px;
+  background: linear-gradient(200deg, rgb(113, 255, 224) 0.9%, rgb(167, 202, 255) 40.96%);
+  
+}
+
+.intro img{
+  width: 45%;
+  height: 50%;
+  border-radius: 20rem;
+}
+
+.intro p{
+  width: 50%;
+  font-weight: bold;
+  color: rgb(0, 128, 128);
+}
+
+.container {
+  width: 100%;
+  
+  background-color: teal; /* Default background color */
+  /* border: 1px solid #000; */
+  text-align: center;
+  /* line-height: 200px; */
+  transition: background-color 1s ease; /* Add transition for smooth color change */
+}
+
+.accept{
+  
+  background-size: cover;
+  /* padding: 2rem 1rem; */
+  background-position: center;
+  background-attachment: fixed; 
+  /* color: rgb(8, 43, 66);
+  text-align: center; */
+}
+
+.steps{
+  background-color: rgba(255, 255, 255, 0.144);
+  padding: 1rem 2rem;
+}
+
+.tab{
+  color: ;
+  font-weight: bold;
+}
+
+.tab button{
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-size: -2px;
+  background: #008080;
+  color: white;
+  border-style: none;
+  box-shadow: -2px -2px 15px rgba(0, 0, 0, 0.185);
+}
+
+.tab button:hover{
+  padding: 0.8rem 2rem;
+  background-color: white;
+  transition: 0.2s ease-in;
+  color: #008080;
+}
+
+.tab-content {
+  opacity: 0; /* Hide tab content by default */
+  transition: opacity 0.5s ease; /* Add transition effect */
+  color: #008080;
+  border: 1px solid #008080;
+  padding: 0.5rem 0.5rem;
+  border-radius: 4px;
+}
+
+.step2{
+  padding: 1rem 2rem;
+  background-color: white;
+  color: rgb(18, 21, 34);
+  font-weight: bold;
+}
+
+.step2 h2{
+  color: rgb(18, 21, 34);
+}
+
+.step2 button{
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  background-color: rgb(18, 21, 34);
+  color: rgb(225, 69, 48);
+  border-style: none;
+  box-shadow: 2px 2px 7px black;
+}
+
+.step2 button:hover{
+  padding: 0.5rem 2rem;
+  background-color: white;
+  transition: 0.2s ease-in;
+}
+
+.cash{
+  padding: 1rem;
+ 
+  color: rgb(18, 21, 34);
+  font-weight: bold;
+}
+
+.cash button{
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  background-color: white;
+  color: rgb(225, 69, 48);
+  border-style: none;
+  box-shadow: 2px 2px 7px black;
+}
+
+.cash button:hover{
+  padding: 0.5rem 2rem;
+  background-color: rgb(18, 21, 34);
+  transition: 0.2s ease-in;
+  color: rgb(225, 69, 48);
+}
+
+/* Default styles */
+.desktop-image {
+  display: block; /* Display for desktop viewport */
+}
+
+.mobile-image {
+  display: none; /* Hide for desktop viewport */
+}
+
+/* Media query for mobile viewport */
+@media screen and (max-width: 768px) {
+  .desktop-image {
+    display: none; /* Hide for mobile viewport */
+  }
+
+  .hero{
+    background-image: url('./images/516431-PIWSFM-401.jpg');
+  }
+  
+  .mobile-image {
+    display: block; /* Display for mobile viewport */
+    width: 100%;
+    margin-bottom: -5rem;
+
+  }
+
+  .button{
+    text-align: center;
+  }
+
+  .button button{
+    background-color: #008080; 
+    padding: 1rem 1.5rem; 
+    color: white;
+    border-style: none;
+    margin-top: -100rem;
+    width: 70%;
+    font-weight: bold;
+  }
+
+  .button button:hover{
+    background-color: white;
+    width: 50%;
+    color: #008080;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.hireimages{
+  margin-bottom: -50rem;
+}
+
+.hireimages img{
+  width: 100%;
+  margin-bottom: -0.5rem;
+}
+
+.buttonsforhire{
+  padding: 0rem 2rem;
+}
