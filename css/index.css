@@ -15,7 +15,7 @@ body{
 }
 
 header{
-  background: linear-gradient(200deg, rgb(113, 255, 224) 0.9%, teal 40.96%);
+  background: linear-gradient(200deg, teal 0.9%, teal 40.96%);
   
 }
 
@@ -348,12 +348,12 @@ nav img{
 }
 
 .hireimages{
-  margin-bottom: -50rem;
+ 
 }
 
 .hireimages img{
   width: 100%;
-  margin-bottom: -0.5rem;
+  margin-bottom: 1rem;
 }
 
 .buttonsforhire{
