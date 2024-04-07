@@ -15,7 +15,7 @@ body{
 }
 
 header{
-  background: linear-gradient(200deg, teal 0.9%, teal 40.96%);
+  background: linear-gradient(200deg, white 0.9%, white 40.96%);
   
 }
 
@@ -35,7 +35,7 @@ header{
 .subnav input{
   width: 80%;
   color: rgb(0, 128, 128);
-  border-radius: 7px;
+  border-radius: 25px;
   border-style: none;
   padding: 0rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.473);
@@ -103,14 +103,14 @@ nav img{
   width: calc(100vw - 40px); /* Set container width to accommodate 5 images */
   margin: 0px; /* Add margin for spacing */
   width: 100%;
-  color:rgb(182, 255, 255);
+  color:teal;
 }
 .menu-item {
   scroll-snap-align: start; /* Snap to the start of each image */
   flex: 0 0 calc(20vw - 8px); /* Set width of each image (20% of viewport width) */
   margin-right: 8px; /* Add margin for spacing between images */
   text-align: center;
-  color: rgb(225, 255, 255);
+  color: teal;
   font-size: 75%;
   font-weight: bold;
 }
@@ -353,9 +353,10 @@ nav img{
 
 .hireimages img{
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: -7rem;
 }
 
 .buttonsforhire{
   padding: 0rem 2rem;
+  margin-left: 3rem;
 }
