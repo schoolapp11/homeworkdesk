@@ -169,9 +169,14 @@
 }
 
 .mobile-search-bar input{
-    width: 90%;
+
     color: #074173;
     font-weight: bold;
+    padding: 0.4rem 1rem;
+        width: 90%;
+        border-radius: 5px;
+        border-style: 1px solid ;
+        border-color: #074173;
 }
 
 .mobile-why-choose-us{
