@@ -28,6 +28,26 @@
     display: none;
 }
 
+.getstarted{
+    text-align: center;
+}
+
+.getstarted button{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    color: #1679AB;
+    border-style: none;
+    background-color: #abdaf1;
+    font-weight: bold;
+}
+
+
+.getstarted button:hover{
+    background-color: #E8C872;
+    color: white;
+    width: 55%;
+    transition: 0.2s ease-in;
+}
 
 /*media querries)*/
 @media only screen and (max-width: 767px) {
@@ -37,12 +57,17 @@
     }
     .mobile{
         display: block;
-        margin-bottom: -10rem;
+        margin-bottom: 18rem;
         width: 100%;
     }
     .nav-menu{
         display: none;
     }
+
+    .ts .t{
+        display: none;
+    }
+
     .mobile-menu{
         display: block;
         padding: 0.5rem 7%;
@@ -51,6 +76,10 @@
     .mobile-menu select option{
         color: #074173;
         background-color: #00000038;
+    }
+
+    .logo img{
+        width: 9rem;
     }
 
     .mobile-menu select
@@ -80,6 +109,28 @@
     .sub-first-container{
         padding: 3rem 0rem;
     }
+    .why-choose-us{
+        display: none;
+    }
+    .subnav{
+        background-color: white;
+        height: 2rem;
+    }
+    .subnav p{
+       display: none;
+    }
+    .subnav img{
+        display: none;
+    }
+    .second-nav{
+        display: none;
+    }
+    .mobile-why-choose-us{
+        width: 100%;
+    }
+    .hero{
+        display: none;
+    }
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
@@ -89,9 +140,15 @@
     }
     .mobile{
         display: block;
-        margin-bottom: -10rem;
         width: 100%;
     }
+
+
+
+}
+
+.mobile-why-choose-us{
+    width: 100%;
 }
 
 .menu-button {
@@ -132,6 +189,8 @@
     text-decoration: none;
     font-size: 24px;
   }
+
+  
 
 
 
@@ -515,3 +574,22 @@ nav .nav-menu ul li a{
   footer .logo-footer .contact{
     color: white;
   }
+
+
+
+
+
+  /*skeleton screen*/
+.skeleton-screen {
+  /* Skeleton screen style */
+}
+
+.skeleton-element {
+  width: 80%;
+  background-color: blue;
+}
+
+/* Hide content by default */
+.hidden {
+  display: none;
+}
