@@ -39,3 +39,27 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlide(index);
   }, 5000); // Change slide every 5 seconds (adjust as needed)
 });
+
+
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+  var skeletonScreen = document.getElementById("skeleton-screen");
+  var content = document.getElementById("content");
+
+  // Show skeleton screen initially
+  skeletonScreen.classList.remove("hidden");
+
+  // Delay showing actual content
+  setTimeout(function() {
+    // Hide skeleton screen and show content after 2 seconds
+    skeletonScreen.classList.add("hidden");
+    content.classList.remove("hidden");
+  }, 2000); // 2000 milliseconds = 2 seconds
+});
+
+
+function toggleMenu() {
+  var menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+  }
+  

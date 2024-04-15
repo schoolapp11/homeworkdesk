@@ -10,217 +10,291 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="subnav">
-        <p>When innovation meets good sales</p>
-        <div class="img">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAACVBMVEUAh1H///8AfDudGzJvAAABX0lEQVR4nO3QQQ0AIAzAwIF/0Yi4ZA/Sc9DObLlnzV2L2tM+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+8uW+B3AYRFPn9q1JAAAAAElFTkSuQmCC" alt="">
-        </div>
-    </div>
-    <nav>
-        <div class="logo">
-            <img src="./css/images/nkmedicals logo.svg" alt="">
-        </div>
 
-        <div class="nav-menu">
+    <div id="skeleton-screen" class="skeleton-screen">
+        <!-- Placeholder elements for skeleton screen -->
+        <div class="skeleton-element"></div>
+        <div class="skeleton-element"></div>
+        <div class="skeleton-element"></div>
+        <!-- Add more placeholder elements as needed -->
+      </div>
+
+
+
+      <div id="content" class="hidden">
+        <!-- Your content elements -->
+
+        <div class="subnav">
+            <p>When innovation meets good sales</p>
+            <div class="img">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAACVBMVEUAh1H///8AfDudGzJvAAABX0lEQVR4nO3QQQ0AIAzAwIF/0Yi4ZA/Sc9DObLlnzV2L2tM+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+8uW+B3AYRFPn9q1JAAAAAElFTkSuQmCC" alt="">
+            </div>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="./css/images/nkmedicals logo.svg" alt="">
+            </div>
+            
+    
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="" onclick="loadPage(event)">Products</a></li>
+                    <li><a href="" onclick="loadPage(event)">Consultancy</a></li>
+                    <li><a href="" onclick="loadPage(event)">Services</a></li>
+                    <li><a href="" onclick="loadPage(event)">Contact US</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <!-- <select name="" id="">
+                <option value="">MENU</option>
+                <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
+                <option value=""><a href="" onclick="loadPage(event)">Login</a></option>
+                <option value=""><a href="" onclick="loadPage(event)">Sign up</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Find a Doctor</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Dentist</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Opthamologist</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Oculist</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">About</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Services</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Contact</a></option>
+                <option value=""><a href="#" onclick="loadPage(event)">Find a Location</a></option>
+    
+            </select> -->
+            
+            <!-- <select class="menu">
+                <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li> -->
+    
+            <!-- </select> -->
+        </div>
+        <div class="loading-line"></div>
+       <div class="first-container">
+        <div class="second-nav">
             <ul>
-                <li><a href="" onclick="loadPage(event)">Products</a></li>
-                <li><a href="" onclick="loadPage(event)">Consultancy</a></li>
-                <li><a href="" onclick="loadPage(event)">Services</a></li>
-                <li><a href="" onclick="loadPage(event)">Contact US</a></li>
+                <li><a href="" onclick="loadPage(event)">Home</a></li>
+                <li><a href="" onclick="loadPage(event)">Login</a></li>
+                <li><a href="" onclick="loadPage(event)">Sign up</a></li>
+                <li><select name="" id="">
+                    <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
+                    <option value="Dentist" onclick="loadPage(event)">Dentist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Opthamologist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Oculist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Surgion</option>
+                    <option value="Dentist" onclick="loadPage(event)">Other....</option>
+                </select></li>
+                <li><a href="" onclick="loadPage(event)">Know us more</a></li>
+                <li><a href="" onclick="loadPage(event)">Awareness</a></li>
+                <li><a href="" onclick="loadPage(event)">Find a Location</a></li>
             </ul>
         </div>
-    </nav>
-    <div class="mobile-menu">
-        <select name="" id="">
-            <option value="">MENU</option>
-            <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
-            <option value=""><a href="" onclick="loadPage(event)">Login</a></option>
-            <option value=""><a href="" onclick="loadPage(event)">Sign up</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Find a Doctor</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Dentist</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Opthamologist</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Oculist</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">About</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Services</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Contact</a></option>
-            <option value=""><a href="#" onclick="loadPage(event)">Find a Location</a></option>
-
-        </select>
+        <div class="media-image">
+            <div class="desktop">
+                <img src="./css/images/first container image.svg" alt="">
+            </div>
+            <div class="mobile">
+                <img src="./css/images/mobile hero.png" alt="">
+            </div>
+        </div>
         
-        <!-- <select class="menu">
-            <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li> -->
-
-        <!-- </select> -->
-    </div>
-    <div class="loading-line"></div>
-   <div class="first-container">
-    <div class="second-nav">
-        <ul>
-            <li><a href="" onclick="loadPage(event)">Home</a></li>
-            <li><a href="" onclick="loadPage(event)">Login</a></li>
-            <li><a href="" onclick="loadPage(event)">Sign up</a></li>
-            <li><select name="" id="">
-                <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
-                <option value="Dentist" onclick="loadPage(event)">Dentist</option>
-                <option value="Dentist" onclick="loadPage(event)">Opthamologist</option>
-                <option value="Dentist" onclick="loadPage(event)">Oculist</option>
-                <option value="Dentist" onclick="loadPage(event)">Surgion</option>
-                <option value="Dentist" onclick="loadPage(event)">Other....</option>
-            </select></li>
-            <li><a href="" onclick="loadPage(event)">Know us more</a></li>
-            <li><a href="" onclick="loadPage(event)">Awareness</a></li>
-            <li><a href="" onclick="loadPage(event)">Find a Location</a></li>
-        </ul>
-    </div>
-    <div class="media-image">
-        <div class="desktop">
-            <img src="./css/images/first container image.svg" alt="">
+        <div class="hero">
+            <h1>
+                INNOVATIVE <br> Healthcare Excellence
+            </h1>
+            Your Source for Quality Medical Equipment & <br> Expert Assistance. <br><br>
+            <div class="sub-first-container">
+                <img src="./css/images/magnifying-glass_10949016.png" alt=""><p>I want to find</p><input type="search" name="" id="">
+            </div>
         </div>
-        <div class="mobile">
-            <img src="./css/images/first container image mobile.svg" alt="">
-        </div>
-    </div>
-    
-    <div class="hero">
-        <h1>
-            INNOVATIVE <br> Healthcare Excellence
-        </h1>
-        Your Source for Quality Medical Equipment & <br> Expert Assistance. <br><br>
-        <div class="sub-first-container">
-            <img src="./css/images/magnifying-glass_10949016.png" alt=""><p>I want to find</p><input type="search" name="" id="">
-        </div>
-    </div>
-   </div>
-   <br><br><br><br>
-   <div class="why-choose-us">
-    <p>Why choose us</p><br>
-    <div class="tabs">
-        <div class="tab">
-            <h3>Quality Products</h3><br>
-            <img src="./css/images/02-01 1.png" alt="">
-            <p>Our medical equipment undergoes rigorous testing to ensure superior quality, reliability, and safety, meeting the highest industry standards.</p>
-          </div>
-
-          <div class="tab">
-            <h3>Affordable Solutions</h3><br>
-            <img src="./css/images/Frame 6.png" alt="">
-            <p>We offer competitively priced solutions without compromising on quality, making essential medical equipment and assistance accessible to all healthcare providers and facilities.</p>
-          </div>
-
-        </div><br><br>
-
+       </div>
+       <div class="getstarted">
+        <button>Start Shopping</button>
+       </div>
+       <br><br><br>
+       <div class="mobile-why-choose-us">
+        <img src="./css/images/mobile display.png" alt="">
+       </div>
+       <div class="why-choose-us">
+        <p>Why choose us</p><br>
         <div class="tabs">
             <div class="tab">
-                <h3>Expert Guidance</h3><br>
-                <img src="./css/images/Frame 7.png" alt="">
-                <p>Our team of experienced professionals provides personalized guidance and support to help you make informed decisions tailored to your specific needs and requirements.</p>
-            </div>
-            <div class="tab">
-              <h3>Exceptional Service</h3><br>
-              <img src="./css/images/Frame 8.png" alt="">
-              <p>We are committed to delivering exceptional service at every step, from product selection to after-sales support, ensuring a seamless and satisfactory experience for our customers.</p>
-            </div>
-        </div>
-<br>
-        <div class="tabstand">
-            <div class="tab">
-                <h3>Customer Satisfaction</h3><br>
-                <img src="./css/images/Frame 9.png" alt="">
-                <p>Customer satisfaction is our top priority. We strive to exceed expectations by delivering reliable products, expert guidance, and exceptional service, ensuring your complete satisfaction.</p>
+                <h3>Quality Products</h3><br>
+                <img src="./css/images/02-01 1.png" alt="">
+                <p>Our medical equipment undergoes rigorous testing to ensure superior quality, reliability, and safety, meeting the highest industry standards.</p>
               </div>
+    
+              <div class="tab">
+                <h3>Affordable Solutions</h3><br>
+                <img src="./css/images/Frame 6.png" alt="">
+                <p>We offer competitively priced solutions without compromising on quality, making essential medical equipment and assistance accessible to all healthcare providers and facilities.</p>
+              </div>
+    
+            </div><br><br>
+    
+            <div class="tabs">
+                <div class="tab">
+                    <h3>Expert Guidance</h3><br>
+                    <img src="./css/images/Frame 7.png" alt="">
+                    <p>Our team of experienced professionals provides personalized guidance and support to help you make informed decisions tailored to your specific needs and requirements.</p>
+                </div>
+                <div class="tab">
+                  <h3>Exceptional Service</h3><br>
+                  <img src="./css/images/Frame 8.png" alt="">
+                  <p>We are committed to delivering exceptional service at every step, from product selection to after-sales support, ensuring a seamless and satisfactory experience for our customers.</p>
+                </div>
+            </div>
+    <br>
+            <div class="tabstand">
+                <div class="tab">
+                    <h3>Customer Satisfaction</h3><br>
+                    <img src="./css/images/Frame 9.png" alt="">
+                    <p>Customer satisfaction is our top priority. We strive to exceed expectations by delivering reliable products, expert guidance, and exceptional service, ensuring your complete satisfaction.</p>
+                  </div>
+            </div>
         </div>
+       </div><br><br>
+    
+    
+       <div class="between-first-and-second-containers">
+        <!-- <div class="feedback-container">
+            <div class="feedback-slides">
+              <div class="feedback-slide">
+                <h2>Feedback 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="feedback-slide">
+                <h2>Feedback 2</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+              <div class="feedback-slide">
+                <h2>Feedback 3</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </div>
+            </div>
+          </div> -->
+          <div class="ts">
+            <div class="t">
+                <img src="./css/images/hand-soap_7499098.png" alt=""><br>Personl care
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/add_12235977.png" alt=""><br>Home health
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/lungs_8181479.png" alt=""><br>Respiratory
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/eye-test_8752170.png" alt=""><br>Eye care
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/medical-heart_7638479.png" alt=""><br>Heart health
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/stroller_3557945.png" alt=""><br>Child health
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/psychotherapy_8181560.png" alt=""><br>Personal care
+              </div>
+        
+              <div class="t">
+                <img src="./css/images/female_5534467.png" alt=""><br>Female health
+              </div>
+          </div>
+          
+          
+       </div>
+    
+    <div class="discount-boss">
+        <div class="discount">
+            <h2>25% OFF FREE DELIVERY ITEMS, 24/7 SERVICES</h2><button>Place an order now -></button>
+        </div>
+    
+        <div class="customer">
+            <div class="ta">
+                <h3>2000+</h3>Order completed
+            </div>
+            <hr>
+            <div class="ta">
+                <h3>1200+</h3>Happy cutomers
+            </div>
+            <hr>
+            <div class="ta">
+                <h3>200+</h3>Medical products
+            </div>
+            <hr>
+            <div class="ta">
+                <h3>Free</h3>Home delivery
+            </div>
+        </div>
+          <br><br><br>
     </div>
-   </div><br><br>
-
-
-   <div class="between-first-and-second-containers">
-    <!-- <div class="feedback-container">
-        <div class="feedback-slides">
-          <div class="feedback-slide">
-            <h2>Feedback 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="feedback-slide">
-            <h2>Feedback 2</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="feedback-slide">
-            <h2>Feedback 3</h2>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
+       
+    
+       <div class="second-container">
+        <h2>Top selling</h2><br>
+    <div class="tabsgeneral">
+        <div class="tabs">
+            <div class="tab">
+                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
+                <h3>Anasthetic machine</h3>
+                
+                <div class="price">
+                    <h4>Price :</h4><h3>100,000</h3><div class="add-to-cart">
+                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
+                    </div>
+                </div>
+                Dscription: Aesthetic machne for hospita use 
+    
+                
+            </div>
+    
+            <div class="tab">
+                <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
+                <h3>Home Use hospital bed</h3>
+                
+                <div class="price">
+                    <h4>Price :</h4><h3>90,000</h3><div class="add-to-cart">
+                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
+                    </div>
+                </div>
+                Description: Medycare Full Power Hospital Bed with Aluminum Railing Mattress for Home Use Care
+            </div>
+    
+            <div class="tab">
+                <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
+                <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
+                
+                <div class="price">
+                    <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
+                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
+                    </div>
+                </div>
+                Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
+            </div>
+            
+            <div class="tab">
+                <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
+                <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
+                
+                <div class="price">
+                    <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
+                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
+                    </div>
+                </div>
+                Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
+            </div>
         </div>
-      </div> -->
-      <div class="ts">
-        <div class="t">
-            <img src="./css/images/hand-soap_7499098.png" alt=""><br>Personl care
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/add_12235977.png" alt=""><br>Home health
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/lungs_8181479.png" alt=""><br>Respiratory
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/eye-test_8752170.png" alt=""><br>Eye care
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/medical-heart_7638479.png" alt=""><br>Heart health
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/stroller_3557945.png" alt=""><br>Child health
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/psychotherapy_8181560.png" alt=""><br>Personal care
-          </div>
-    
-          <div class="t">
-            <img src="./css/images/female_5534467.png" alt=""><br>Female health
-          </div>
-      </div>
-      
-      
-   </div>
-
-<div class="discount-boss">
-    <div class="discount">
-        <h2>25% OFF FREE DELIVERY ITEMS, 24/7 SERVICES</h2><button>Place an order now -></button>
-    </div>
-
-    <div class="customer">
-        <div class="ta">
-            <h3>2000+</h3>Order completed
-        </div>
-        <hr>
-        <div class="ta">
-            <h3>1200+</h3>Happy cutomers
-        </div>
-        <hr>
-        <div class="ta">
-            <h3>200+</h3>Medical products
-        </div>
-        <hr>
-        <div class="ta">
-            <h3>Free</h3>Home delivery
-        </div>
-    </div>
-      <br><br><br>
-</div>
-   
-
-   <div class="second-container">
-    <h2>Top selling</h2><br>
-<div class="tabsgeneral">
-    <div class="tabs">
+       </div>
+       <br><br>
+       <div class="tabs">
         <div class="tab">
             <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
             <h3>Anasthetic machine</h3>
@@ -231,10 +305,10 @@
                 </div>
             </div>
             Dscription: Aesthetic machne for hospita use 
-
+    
             
         </div>
-
+    
         <div class="tab">
             <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
             <h3>Home Use hospital bed</h3>
@@ -246,7 +320,7 @@
             </div>
             Description: Medycare Full Power Hospital Bed with Aluminum Railing Mattress for Home Use Care
         </div>
-
+    
         <div class="tab">
             <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
             <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
@@ -258,7 +332,7 @@
             </div>
             Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
         </div>
-        
+    
         <div class="tab">
             <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
             <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
@@ -271,96 +345,45 @@
             Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
         </div>
     </div>
-   </div>
-   <br><br>
-   <div class="tabs">
-    <div class="tab">
-        <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-        <h3>Anasthetic machine</h3>
-        
-        <div class="price">
-            <h4>Price :</h4><h3>100,000</h3><div class="add-to-cart">
-                <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-            </div>
-        </div>
-        Dscription: Aesthetic machne for hospita use 
-
-        
-    </div>
-
-    <div class="tab">
-        <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
-        <h3>Home Use hospital bed</h3>
-        
-        <div class="price">
-            <h4>Price :</h4><h3>90,000</h3><div class="add-to-cart">
-                <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-            </div>
-        </div>
-        Description: Medycare Full Power Hospital Bed with Aluminum Railing Mattress for Home Use Care
-    </div>
-
-    <div class="tab">
-        <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-        <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-        
-        <div class="price">
-            <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-            </div>
-        </div>
-        Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-    </div>
-
-    <div class="tab">
-        <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-        <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-        
-        <div class="price">
-            <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-            </div>
-        </div>
-        Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-    </div>
-</div>
-</div>
-
-</div>
-
-
-
-
-<footer>
-    <div class="logo-footer">
-        <div class="logo">
-            <img src="./css/images/nkmedicals logo2.svg" alt="">
-        </div>
-        <div class="social-media-links">
-           <p>Social media links </p> <img class="social" src="./css/images/facebook_5968764.png" alt=""><img class="social"  src="./css/images/instagram_2111463.png" alt=""><img class="social"  src="./css/images/whatsapp_5968841.png" alt="">
-        </div>
-        <div class="contact">
-            Phone Number: +2367234832 <br>
-            Email Address: nkmeds@gmail.com <br>
-            Address: No.4 NOrmally street <br> Abakaliki, Ebonyi state, Nigeria
-        </div>
-    </div><br><br>
-    <div class="logo-footer">
-        <div class="social-media-links">
-            <div class="links">
-                <a href="">Home</a><br>
-           <a href="">About Us</a><br><a href="">Subscribe</a><br>
-           <a href="">FAQs</a><br><a href="">Terms of Service</a><br>
-           <a href="">LinkedIn</a><br><a href="">Privacy Policy</a><br>
-           <a href="">Return Policy</a>
-            </div>
-        </div>
-        <div class="contact">
-                © 2024 Gideon Suite. All rights reserved
-        </div>
     </div>
     
-</footer>
+    </div>
+    
+    
+    
+    
+    <footer>
+        <div class="logo-footer">
+            <div class="logo">
+                <img src="./css/images/nkmedicals logo2.svg" alt="">
+            </div>
+            <div class="social-media-links">
+               <p>Social media links </p> <img class="social" src="./css/images/facebook_5968764.png" alt=""><img class="social"  src="./css/images/instagram_2111463.png" alt=""><img class="social"  src="./css/images/whatsapp_5968841.png" alt="">
+            </div>
+            <div class="contact">
+                Phone Number: +2367234832 <br>
+                Email Address: nkmeds@gmail.com <br>
+                Address: No.4 NOrmally street <br> Abakaliki, Ebonyi state, Nigeria
+            </div>
+        </div><br><br>
+        <div class="logo-footer">
+            <div class="social-media-links">
+                <div class="links">
+                    <a href="">Home</a><br>
+               <a href="">About Us</a><br><a href="">Subscribe</a><br>
+               <a href="">FAQs</a><br><a href="">Terms of Service</a><br>
+               <a href="">LinkedIn</a><br><a href="">Privacy Policy</a><br>
+               <a href="">Return Policy</a>
+                </div>
+            </div>
+            <div class="contact">
+                    © 2024 Gideon Suite. All rights reserved
+            </div>
+        </div>
+        
+    </footer>
+      </div>
+    
   
   
    <script src="script.js"></script>
