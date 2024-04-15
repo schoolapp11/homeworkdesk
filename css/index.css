@@ -34,7 +34,7 @@
 
 .getstarted button{
     width: 50%;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     color: #1679AB;
     border-style: none;
     background-color: #abdaf1;
@@ -176,7 +176,7 @@
         width: 90%;
         border-radius: 5px;
         border-style: 1px solid ;
-        border-color: #074173;
+        border-color: #1679AB;
 }
 
 .mobile-why-choose-us{
