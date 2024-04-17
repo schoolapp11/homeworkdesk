@@ -183,6 +183,50 @@
     width: 100%;
 }
 
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .menu-content {
+    padding: 20px;
+  }
+  
+  .menu-content a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .open-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
 .menu-button {
     /* position: fixed;
     top: 20px;
@@ -210,6 +254,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+
+  @media only screen and (min-width: 1024px){
+    .mobile{
+        display: none;
+    }
+    .mobile-why-choose-us{
+        display: none;
+    }
   }
   
   .menu ul li {
@@ -543,34 +596,6 @@ nav .nav-menu ul li a{
 
 
 
-
- /* Loading animation styles */
- @keyframes pulsate {
-    0% { opacity: 0.5; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.5; transform: scale(0.8); }
-  }
-
-  
-
-  .loading-line {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 50%;
-    right: 20%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 7px;
-    background-color: white; /* Background color changed to white */
-    background-size: 100% 100%; /* Background width set to 100% */
-    animation: pulsate 1.5s ease-in-out infinite;
-    z-index: 9999; /* Ensure the loading line appears on top */
-  }
-
-  .loading-image {
-    max-width: 100%; /* Limit image width to container width */
-    margin-top: 10px; /* Add space between line and image */
-  }
 
 
   footer{
