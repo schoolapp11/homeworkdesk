@@ -377,15 +377,16 @@ nav .nav-menu ul li a{
   }
 
   .swiper-slide img{
-    width: 7rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
   }
 
   .swiper-slide{
     background-color: white;
-    box-shadow: 2px 2px 25px #1679ab13;
+    box-shadow: 2px 2px 25px #0d87c421;
     text-align: center;
     padding: 1rem;
+    width: 5rem;
     height: 10rem;
   }
 
