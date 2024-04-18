@@ -106,4 +106,18 @@
     border-radius: 20rem;
     background-color: rgb(225, 255, 255);
   }
+
+.hero-image{
+    margin-bottom: -2rem;
+}
+
+.hero-tabs1{
+    display: flex;
+    gap: 10%;
+    padding: 0rem 7%;
+}
+
+.hero-tabs1 .tab img{
+    width: 6rem;
+}
   
