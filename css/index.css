@@ -364,12 +364,13 @@ nav .nav-menu ul li a{
   }
 
   .swiper-slide img{
-    width: 5rem;
+    width: 7rem;
+    height: 6rem;
   }
 
   .swiper-slide{
     background-color: white;
-    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.13);
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.089);
     text-align: center;
     padding: 1rem;
     height: 10rem;
