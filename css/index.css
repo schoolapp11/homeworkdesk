@@ -213,6 +213,8 @@
     color: #074173;
     text-decoration: none;
     margin-bottom: 10px;
+    font-weight: bold;
+    padding: 0.5rem 0rem;
   }
   
   .close-btn {
@@ -659,6 +661,7 @@ nav .nav-menu ul li a{
 .second-container .tabs .tab img{
     width: 100%;
     height: 60%;
+    
 }
 
 .second-container .tabs .tab .price{
@@ -716,6 +719,7 @@ nav .nav-menu ul li a{
 
 .mobile-topselling .mobile-tabs .mobile-tab img{
     width: 6rem;
+    height: 7rem;
 }
 
 .mobile-topselling .mobile-tabs .mobile-tab h3{
@@ -734,12 +738,26 @@ nav .nav-menu ul li a{
 
 .mobile-topselling .mobile-tabs .mobile-tab p{
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .mobile-topselling .mobile-tabs .mobile-tab .price h3{
     padding: 0.3rem 0rem;
     color: green;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab .price button{
+    background-color: #3498db;
+    padding: 0.3rem;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab .price button:hover{
+    background-color: #E8C872;
+    color: white;
+    transition: 0.2s ease-in;
 }
 
 
