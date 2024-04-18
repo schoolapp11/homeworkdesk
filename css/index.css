@@ -157,7 +157,12 @@
     .mobile-topselling{
         display: block;
     }
+
+    footer .logo-footer{
+        display: block;
+    }
 }
+
 
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 768px) and (max-width: 991px){
@@ -732,8 +737,7 @@ nav .nav-menu ul li a{
 }
 
 .mobile-topselling .mobile-tabs .mobile-tab .price{
-    display: flex;
-    gap: 1rem;
+    text-align: left;
 }
 
 .mobile-topselling .mobile-tabs .mobile-tab p{
@@ -752,6 +756,7 @@ nav .nav-menu ul li a{
     font-weight: bold;
     font-size: 12px;
     border-radius: 5px;
+    margin-bottom: 0.5rem;
 }
 
 .mobile-topselling .mobile-tabs .mobile-tab .price button:hover{
