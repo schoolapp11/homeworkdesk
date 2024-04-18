@@ -132,6 +132,9 @@
     .hero{
         display: none;
     }
+    .discount-boss .customer hr{
+      
+    }
     
 }
 
@@ -161,6 +164,8 @@
     footer .logo-footer{
         display: block;
     }
+
+    
 }
 
 
@@ -189,9 +194,10 @@
     font-weight: bold;
     padding: 0.4rem 1rem;
         width: 87%;
+        height: 2.3rem;
         border-radius: 25px;
-        border-style: 1px solid ;
-        border-color: #1679AB;
+        border-style: none;
+        box-shadow: 2px 0px 7px #3498db34;
 }
 
 .mobile-why-choose-us{
@@ -601,8 +607,14 @@ nav .nav-menu ul li a{
     padding: 0.5rem 1.5rem;
     border-style: none;
     border-radius: 20rem;
+    font-weight: bold;
+
 }
 
+.discount-boss .discount button:hover{
+    background-color: white;
+    color: #E8C872;
+}
 
 .discount-boss .customer{
     display: flex;
@@ -610,6 +622,11 @@ nav .nav-menu ul li a{
     padding: 1rem 8%;
     background-color:  #e8c972c2;
     color: rgba(0, 0, 0, 0.87);
+}
+
+.discount-boss .customer .ta{
+    font-size: 15px;
+
 }
 
 .discount-boss .customer hr{
