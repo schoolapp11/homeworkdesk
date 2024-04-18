@@ -49,3 +49,20 @@ function closeMenu() {
   document.getElementById("menuBar").style.width = "0";
 }
 
+
+var swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  loop: true,
+  // If you want to enable pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+
+

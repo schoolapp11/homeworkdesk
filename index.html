@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
 
@@ -43,10 +44,24 @@
             <div class="menu-content">
               <button class="close-btn" onclick="closeMenu()">X</button>
               <!-- Add menu items here -->
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Contact</a>
+              <a href="" onclick="loadPage(event)">Home</a>
+                <a href="" onclick="loadPage(event)">Login</a>
+                <a href="" onclick="loadPage(event)">Sign up</a>
+                <select name="" id="">
+                    <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
+                    <option value="Dentist" onclick="loadPage(event)">Dentist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Opthamologist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Oculist</option>
+                    <option value="Dentist" onclick="loadPage(event)">Surgion</option>
+                    <option value="Dentist" onclick="loadPage(event)">Other....</option>
+                </select>
+                <a href="" onclick="loadPage(event)">Know us more</a>
+                <a href="" onclick="loadPage(event)">Awareness</a>
+                <a href="" onclick="loadPage(event)">Find a Location</a>
+              <a href="" onclick="loadPage(event)">Products</a>
+                    <a href="" onclick="loadPage(event)">Consultancy</a>
+                    <a href="" onclick="loadPage(event)">Services</a>
+                   <a href="" onclick="loadPage(event)">Contact US</a>
             </div>
           </div>
           
@@ -54,32 +69,8 @@
         <div class="mobile-search-bar">
             
             <input type="search" name="" id="" placeholder="Search...">
-        </div>
-        <div class="mobile-menu">
-            <!-- <select name="" id="">
-                <option value="">MENU</option>
-                <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
-                <option value=""><a href="" onclick="loadPage(event)">Login</a></option>
-                <option value=""><a href="" onclick="loadPage(event)">Sign up</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Find a Doctor</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Dentist</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Opthamologist</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Oculist</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">About</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Services</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Contact</a></option>
-                <option value=""><a href="#" onclick="loadPage(event)">Find a Location</a></option>
-    
-            </select> -->
-            
-            <!-- <select class="menu">
-                <option value=""><a href="#" onclick="loadPage(event)">Home</a></option>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li> -->
-    
-            <!-- </select> -->
+        </div><br>
+        
         </div>
         <div class="loading-line"></div>
        <div class="first-container">
@@ -124,13 +115,63 @@
         <button>Start Shopping</button>
        </div>
        <br><br><br>
+    <div class="hotdeals">
+        <h3>Hot deals</h3>
+       <h5>This week's hot deals</h5>
+        <br>
+        <h3>Hospital Consumables</h3>
+       <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Loading spinner -->
+          <!-- <div class="loading-spinner"></div> -->
+          <!-- Initial images (up to 4) -->
+          <div class="swiper-slide"><img src="./css/images/blue latex glove.png" alt="Image 1"><p>Latex gloves</p></div>
+          <div class="swiper-slide"><img src="./css/images/syringe.png" alt="Image 2"><p>Syringe</p></div>
+          <div class="swiper-slide"><img src="https://www.polymedicure.com/wp-content/uploads/2019/05/polycath.jpg" alt="Image 3"><p>Cannula</p></div>
+          <div class="swiper-slide"><img src="https://www.santebene.com/wp-content/uploads/2021/07/PPE-3-Ply-Mask.jpg" alt="Image 4"><p>Facemask</p></div>
+          <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/proxy/jBiVTsHLXZXL3oXEaCXzZLtN_kJr8CG9jmus3pe7jls0Nef-5vQF5PHPuJtt-qvkDdoDRlQX_sOlfJNLCG7YoB9bxbl3i4DGbaYTRCJAHC0OBZuOORoxVIFSHkEyEllLJvA8mi94i-r4qO-Xgk8Kn0BJZKzVQ-di5yJd5kxq7r_3pRgp5YQy" alt="Image 4"><p>Catheter</p></div>
+          <div class="swiper-slide"><img src="https://www.leboo.com.cn/upload/2023/04/11/16811765598546lefw7.jpg" alt="Image 4"><p>Drapes</p></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Adhesive_tapes_clear.JPG" alt="Image 4"><p>Surgical Tapes</p></div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Pagination and navigation buttons -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <br>
+        <h3>Bedings and Transport</h3>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <!-- Loading spinner -->
+              <!-- <div class="loading-spinner"></div> -->
+              <!-- Initial images (up to 4) -->
+              <div class="swiper-slide"><img src="./css/images/blue latex glove.png" alt="Image 1"><p>Latex gloves</p></div>
+              <div class="swiper-slide"><img src="./css/images/syringe.png" alt="Image 2"><p>Syringe</p></div>
+              <div class="swiper-slide"><img src="https://www.polymedicure.com/wp-content/uploads/2019/05/polycath.jpg" alt="Image 3"><p>Cannula</p></div>
+              <div class="swiper-slide"><img src="https://www.santebene.com/wp-content/uploads/2021/07/PPE-3-Ply-Mask.jpg" alt="Image 4"><p>Facemask</p></div>
+              <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/proxy/jBiVTsHLXZXL3oXEaCXzZLtN_kJr8CG9jmus3pe7jls0Nef-5vQF5PHPuJtt-qvkDdoDRlQX_sOlfJNLCG7YoB9bxbl3i4DGbaYTRCJAHC0OBZuOORoxVIFSHkEyEllLJvA8mi94i-r4qO-Xgk8Kn0BJZKzVQ-di5yJd5kxq7r_3pRgp5YQy" alt="Image 4"><p>Catheter</p></div>
+              <div class="swiper-slide"><img src="https://www.leboo.com.cn/upload/2023/04/11/16811765598546lefw7.jpg" alt="Image 4"><p>Drapes</p></div>
+              <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Adhesive_tapes_clear.JPG" alt="Image 4"><p>Surgical Tapes</p></div>
+              <!-- Add more slides as needed -->
+            </div>
+            <!-- Pagination and navigation buttons -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+    </div>   
+       
+
+
+
+      </div>
        <div class="mobile-why-choose-us">
         <img src="./css/images/mobile display.png" alt="">
        </div>
 
-       <div class="hot-items">
-
-       </div>
+       
+      
 
        <div class="why-choose-us">
         <p>Why choose us</p><br>
@@ -402,5 +443,29 @@
   
   
    <script src="script.js"></script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 4, // Display up to 4 images initially
+    spaceBetween: 20, // Adjust spacing between images
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Hide loading spinner and show swiper container when images are loaded
+  swiper.on('imagesReady', function () {
+    document.querySelector('.loading-spinner').style.display = 'none';
+    document.querySelector('.swiper-container').style.visibility = 'visible';
+  });
+});
+   </script>
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
