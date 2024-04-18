@@ -66,3 +66,63 @@ var swiper = new Swiper('.swiper-container', {
 
 
 
+
+
+
+
+
+
+// Get the container element
+const container = document.querySelector('.menu-container');
+
+// Variables to store initial touch position
+let initialX = null;
+
+// Event listener for touch start
+container.addEventListener('touchstart', (e) => {
+  initialX = e.touches[0].clientX;
+});
+
+// Event listener for touch move
+container.addEventListener('touchmove', (e) => {
+  if (!initialX) {
+    return;
+  }
+
+  const currentX = e.touches[0].clientX;
+  const diffX = initialX - currentX;
+
+  // Scroll horizontally
+  container.scrollLeft += diffX;
+
+  // Update initial touch position
+  initialX = currentX;
+});
+
+// Event listener for touch end
+container.addEventListener('touchend', () => {
+  initialX = null; // Reset initial touch position
+});
+
+
+
+
+
+function startLoading(buttonId) {
+  // Get the button element
+  const button = document.getElementById(buttonId);
+  
+  // Add loading class to the button to trigger animation
+  button.classList.add('loading');
+
+  // Simulate loading delay (remove this line in real implementation)
+  setTimeout(() => {
+    // Remove loading class after delay (simulate loading completion)
+    button.classList.remove('loading');
+
+    // Redirect to the next page or perform other actions here
+    window.location.href = 'another-page.html'; // Example: redirect to the next page
+  }, 2000); // Adjust delay time as needed (in milliseconds)
+}
+
+

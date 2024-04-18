@@ -29,6 +29,96 @@
     display: none;
 }
 
+
+
+
+
+.menu-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snapping to each image */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    width: calc(100vw - 40px); /* Set container width to accommodate 5 images */
+    margin: 0px; /* Add margin for spacing */
+    width: 100%;
+    color: #074173;
+  }
+  .menu-item {
+    scroll-snap-align: start; /* Snap to the start of each image */
+    flex: 0 0 calc(30vw - 8px); /* Set width of each image (20% of viewport width) */
+    margin-right: 10px; /* Add margin for spacing between images */
+    text-align: center;
+    color: #074173;
+    font-size: 85%;
+    font-weight: bold;
+    width: 100%;
+  }
+  .menu-item:last-child {
+    margin-right: 0; /* Remove margin from the last image */
+  }
+  .menu-item img {
+    width: 100%; /* Make images fill their parent container */
+    height: auto;
+    border-radius: 20rem;
+    background-color: rgb(225, 255, 255);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for loading animation */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .loading {
+    animation: pulse 1s ease-in-out infinite; /* Blinking animation */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
 .getstarted{
     text-align: center;
 }
@@ -302,6 +392,10 @@
     }
 
     .mobile-topselling{
+        display: none;
+    }
+
+    .menu-container{
         display: none;
     }
   }

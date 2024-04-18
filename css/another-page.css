@@ -1,0 +1,109 @@
+*{
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: -10%;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .mobile-search-bar{
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-search-bar input{
+        padding: 0.4rem 1rem;
+        width: 100%;
+        border-radius: 5px;
+        border-style: 1px solid ;
+        border-color: #074173;
+    }
+}
+
+
+.mobile-search-bar{
+    text-align: center;
+    
+}
+
+.mobile-search-bar input{
+
+    color: #074173;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+        width: 87%;
+        height: 2.6rem;
+        border-radius: 25px;
+        border-style: none;
+        box-shadow: 2px 0px 7px #3498db46;
+}
+
+
+
+@media only screen and (min-width: 1024px){
+    .mobile{
+        display: none;
+    }
+    .mobile-why-choose-us{
+        display: none;
+    }
+    .mobile-search-bar{
+        display: none;
+    }
+}
+
+
+
+
+/* Styles for bottom menu bar */
+.bottom-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(200deg, #0050C7 0.9%, #074173 40.96%);
+    padding: 10px 0;
+    text-align: center;
+    height: 2.5rem;
+  }
+  
+  .bottom-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+
+
+
+  .menu-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snapping to each image */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    width: calc(100vw - 40px); /* Set container width to accommodate 5 images */
+    margin: 0px; /* Add margin for spacing */
+    width: 100%;
+    color: #074173;
+  }
+  .menu-item {
+    scroll-snap-align: start; /* Snap to the start of each image */
+    flex: 0 0 calc(30vw - 8px); /* Set width of each image (20% of viewport width) */
+    margin-right: 10px; /* Add margin for spacing between images */
+    text-align: center;
+    color: #074173;
+    font-size: 85%;
+    font-weight: bold;
+    width: 100%;
+  }
+  .menu-item:last-child {
+    margin-right: 0; /* Remove margin from the last image */
+  }
+  .menu-item img {
+    width: 100%; /* Make images fill their parent container */
+    height: auto;
+    border-radius: 20rem;
+    background-color: rgb(225, 255, 255);
+  }
+  
