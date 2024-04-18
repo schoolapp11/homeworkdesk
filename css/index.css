@@ -148,6 +148,15 @@
         border-style: 1px solid ;
         border-color: #074173;
     }
+
+    .second-container{
+        width: 100%;
+        display: none;
+    }
+
+    .mobile-topselling{
+        display: block;
+    }
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
@@ -276,6 +285,10 @@
     .open-btn{
         display: none;
     }
+
+    .mobile-topselling{
+        display: none;
+    }
   }
   
   .menu ul li {
@@ -370,7 +383,7 @@ nav .nav-menu ul li a{
 
   .swiper-slide{
     background-color: white;
-    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.089);
+    box-shadow: 2px 2px 25px #1679ab13;
     text-align: center;
     padding: 1rem;
     height: 10rem;
@@ -677,7 +690,54 @@ nav .nav-menu ul li a{
 }
 
 
+.mobile-topselling{
+    padding: 1rem 4%;
+}
 
+.mobile-topselling .mobile-tabs{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab{
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1679AB;
+    padding: 1rem;
+    text-align: center;
+    width: 50%;
+    line-height: 1rem;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab img{
+    width: 6rem;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab h3{
+    font-size: 15px;
+    text-align: left;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab h4{
+    text-align: left;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab .price{
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab p{
+    text-align: left;
+    font-size: 15px;
+}
+
+.mobile-topselling .mobile-tabs .mobile-tab .price h3{
+    padding: 0.3rem 0rem;
+    color: green;
+}
 
 
   footer{
