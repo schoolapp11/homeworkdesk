@@ -19,6 +19,15 @@
         border-style: 1px solid ;
         border-color: #074173;
     }
+    
+    .hero-image-desktop img{
+       display: none;
+    }
+
+    .ts{
+        display: grid;
+        text-align: center;
+    }
 }
 
 
@@ -51,6 +60,14 @@
     .mobile-search-bar{
         display: none;
     }
+    .hero-image img{
+    display: none;
+}
+.ts{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+}
 }
 
 
@@ -71,7 +88,7 @@
   .bottom-menu a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
   }
 
 
@@ -107,17 +124,64 @@
     background-color: rgb(225, 255, 255);
   }
 
-.hero-image{
-    margin-bottom: -2rem;
+.hero-image img{
+    margin-bottom: -4rem;
+    width: 100%;
 }
+
+
 
 .hero-tabs1{
     display: flex;
-    gap: 10%;
-    padding: 0rem 7%;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.hero-tabs1 .tab{
+    padding: 1rem 2%;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 0px 7px #3498db46;
 }
 
 .hero-tabs1 .tab img{
     width: 6rem;
+    height: 6rem;
+}
+
+.hero-tabs1 .tab h3{
+    font-size: 13px;
+    color: #074173;
+}
+
+.hero-image-desktop img{
+    width: 100%;
+    margin-bottom: -2rem;
 }
   
+.hero-tabs2{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.hero-tabs2 .tab{
+    padding: 1rem 2%;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 0px 7px #3498db46;
+}
+
+.hero-tabs2 .tab img{
+    width: 6rem;
+    height: 6rem;
+}
+
+.hero-tabs2 .tab h3{
+    font-size: 14px;
+    color: #074173;
+}
+
+
