@@ -6,3 +6,36 @@
 }
 
 
+
+/* Styles for slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Styles for slides */
+  .slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .slide-fade img{
+    width: 3rem;
+  }
+  
+  /* Fade animation */
+  .fade {
+    animation: fadeEffect 5s infinite;
+  }
+  
+  /* Slide fade animation */
+  @keyframes fadeEffect {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+  }
+  
