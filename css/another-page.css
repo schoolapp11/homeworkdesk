@@ -55,6 +55,11 @@
     padding: 0.5rem 0rem;
 }
 
+.call{
+    text-align: center;
+    background-color: rgba(255, 105, 180, 0.788);
+    padding: 0.2rem;
+}
 
 
 @media only screen and (min-width: 1024px){
@@ -89,12 +94,12 @@
     background: linear-gradient(200deg, #0043a7 0.9%, #0D7BD9 40.96%);
     padding: 10px 0; 
     text-align: center;
-    height: 2.5rem;
+    height: 2rem;
   }
 
   .bottom-menu a img{
     width: 1.5rem;
-    margin-top: 10px ;
+    margin-top: 5px ;
   }
   
   .bottom-menu a {
@@ -174,7 +179,7 @@
 }
 
 .hero-tabs1 .tab p{
-    font-size: 12px;
+    font-size: 10px;
     color: #0D7BD9;
 }
 
@@ -203,7 +208,7 @@
 }
 
 .hero-tabs2 .tab p{
-    font-size: 14px;
+    font-size: 10px;
     color: #0D7BD9;
 }
 
