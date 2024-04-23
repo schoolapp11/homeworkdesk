@@ -47,7 +47,7 @@
               <!-- Add menu items here -->
               <a href="" onclick="loadPage(event)">Home</a>
                 <a href="" onclick="loadPage(event)">Login</a>
-                <a href="" onclick="loadPage(event)">Sign up</a>
+                <a href="signup.html" onclick="loadPage(event)">Sign up</a>
                 <select name="" id="">
                     <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
                     <option value="Dentist" onclick="loadPage(event)">Dentist</option>
@@ -81,7 +81,7 @@
 
         <div class="menu-container">
             <div class="menu-item">Login</div>
-            <div class="menu-item">Sign up</div>
+            <div class="menu-item"><a href="signup.html">Sign up</a></div>
             <div class="menu-item">Find a Doctor</div>
             <div class="menu-item">Get highered</div>
             <div class="menu-item">Products</div>
@@ -104,7 +104,7 @@
             <ul>
                 <li><a href="" onclick="loadPage(event)">Home</a></li>
                 <li><a href="" onclick="loadPage(event)">Login</a></li>
-                <li><a href="" onclick="loadPage(event)">Sign up</a></li>
+                <li><a href="signup.html" onclick="loadPage(event)">Sign up</a></li>
                 <li><select name="" id="">
                     <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
                     <option value="Dentist" onclick="loadPage(event)">Dentist</option>
@@ -597,6 +597,27 @@
     document.querySelector('.swiper-container').style.visibility = 'visible';
   });
 });
+
+
+
+// // Function to generate a unique user ID
+// function generateUserId() {
+//     return 'user_' + Math.random().toString(36).substr(2, 9);
+// }
+
+// // Check if the user has a stored identifier
+// let userId = localStorage.getItem('userId');
+
+// if (!userId) {
+//     // If the identifier doesn't exist, generate a new one
+//     userId = generateUserId();
+//     // Store the new identifier
+//     localStorage.setItem('userId', userId);
+// }
+
+// // Now you can use the userId variable for further operations
+// console.log('User ID:', userId);
+
    </script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>

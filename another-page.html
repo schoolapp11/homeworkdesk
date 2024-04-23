@@ -21,10 +21,14 @@
     </div><br>
 
     <div class="menu-container">
-        <div class="menu-item">Login</div>
+        
+
         <div class="menu-item">Find a Doctor</div>
         <div class="menu-item">Get highered</div>
         <div class="menu-item">Products</div>
+        
+        <a href="/login?redirectTo=<%= encodeURIComponent(req.originalUrl) %>">Login</a>
+
         <div class="menu-item">Categories</div>
         <div class="menu-item">Discount sales</div>
         <div class="menu-item">Consultancy</div>
@@ -54,11 +58,13 @@
     <br>
       <div class="ts">
         <div class="hero-tabs1">
-            <div class="tab">
-                <img src="https://img3.exportersindia.com/product_images/bc-full/2018/11/1940327/medical-surgical-hospital-consumables-1541052897-4423912.jpeg" alt="">
-                <p>Hospital <br>Consumables</p>
+            <a href="/items?category=consumables">
+                <div class="tab">
+                    <img src="https://img3.exportersindia.com/product_images/bc-full/2018/11/1940327/medical-surgical-hospital-consumables-1541052897-4423912.jpeg" alt="">
+                    <p>Hospital <br>Consumables</p>
                 
-            </div>
+                </div>
+            </a>
             <div class="tab">
                 <img src="./css/images/image 1.png" alt="">
                 <p>Transport <br>Equipment</p>
@@ -122,8 +128,10 @@
         <a href="index.html"><img src="./css/images/home.png" alt=""></a>
         <a href="#"><img src="./css/images/cart.png" alt=""></a>
         <a href="#"><img src="./css/images/account.png" alt=""></a>
-        <a href="exmple.html"><img src="./css/images/favourites.png" alt=""></a>
+        <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
       </div>
+<!-- Example link in navbar.ejs -->
+
 
       <script>
         

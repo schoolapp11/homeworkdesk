@@ -131,3 +131,67 @@ function startLoading(buttonId) {
 
 
 
+ // Function to validate the form before submission
+ function validateForm() {
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  // Simple validation: check if any field is empty
+  if (username.trim() === '' || email.trim() === '' || password.trim() === '') {
+      alert('Please fill in all fields');
+      return false; // Prevent form submission
+  }
+  return true; // Allow form submission
+}
+
+
+
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const formData = new FormData(this);
+  const username = formData.get('username');
+  const password = formData.get('password');
+
+  try {
+      const response = await fetch('/login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+      });
+
+      if (response.ok) {
+          window.location.href = '/profile'; // Redirect to profile page on successful login
+      } else {
+          const errorMessage = await response.text();
+          // Display error message
+          alert(errorMessage);
+      }
+  } catch (error) {
+      console.error('Error submitting login form:', error);
+      // Display error message
+      alert('An error occurred. Please try again later.');
+  }
+});
+
+
+// Function to generate a unique user ID
+function generateUserId() {
+  return 'user_' + Math.random().toString(36).substr(2, 9);
+}
+
+// Check if the user has a stored identifier
+let userId = localStorage.getItem('userId');
+
+if (!userId) {
+  // If the identifier doesn't exist, generate a new one
+  userId = generateUserId();
+  // Store the new identifier
+  localStorage.setItem('userId', userId);
+}
+
+// Now you can use the userId variable for further operations
+console.log('User ID:', userId);
