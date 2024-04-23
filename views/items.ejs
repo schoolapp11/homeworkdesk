@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nkwegu medicals</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../css/items.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="theme-color" 
   content="#ffffff">
@@ -13,17 +13,34 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <h1>Items</h1>
-    <ul>
-        <% items.forEach(item => { %>
-            <li>
-                <img src="<%= item.image_url %>" alt="<%= item.name %> Image">
-                <h2><%= item.name %></h2>
-                <p><strong>Price:</strong> <%= item.price %></p>
-                <p><strong>Description:</strong> <%= item.description %></p>
+    <div class="mobile-search-bar"> 
+        <input type="search" name="" id="" placeholder="Search..."> <div class="cart"><img src="./css/images/cart for menu.png" alt=""></div>
+    </div>
+    <div class="item-body">
+        <h2 style="color: #0D7BD9;">Items</h2>
+        <div class="items-tab">
+            <% items.forEach(item => { %>
+                <div class="sep">
+                    <img src="<%= item.image_url %>" alt="<%= item.name %> Image">
+                <h3><%= item.name %></h3>
+                <p><strong></strong> <%= item.description %></p>
+                <p class="price"><strong>Price:</strong> <%= item.price %></p><br>
+                <form action="/add-to-cart" method="POST"> <!-- Adjust the action attribute to the correct endpoint -->
+                    <input type="hidden" name="itemId" value="<%= item.id %>"> <!-- Assuming you have an 'id' field in your item object -->
+                    <button type="submit">ADD TO CART</button>
+                </form><br>
+                </div>
+                
                 <!-- Add more details as needed -->
-            </li>
-        <% }); %>
-    </ul>
+            
+            <% }); %> 
+
+
+        </div>
+
+        
+        
+        
+    </div>
 </body>
 </html>
