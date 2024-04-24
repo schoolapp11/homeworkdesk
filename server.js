@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require('express-session');
+// const session = require('express-session');
 require('dotenv').config();
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
@@ -28,29 +28,29 @@ const transporter = nodemailer.createTransport({
 
 
 
-// Authentication middleware
-function requireAuth(req, res, next) {
-  if (req.session.userId) {
-      // User is authenticated
-      next();
-  } else {
-      // User is not authenticated, redirect to sign-in page
-      req.session.returnTo = req.originalUrl; // Store original URL
-      res.redirect('/signin');
-  }
-}
+// // Authentication middleware
+// function requireAuth(req, res, next) {
+//   if (req.session.userId) {
+//       // User is authenticated
+//       next();
+//   } else {
+//       // User is not authenticated, redirect to sign-in page
+//       req.session.returnTo = req.originalUrl; // Store original URL
+//       res.redirect('/signin');
+//   }
+// }
 
 
 
 
-const SECRET_KEY = process.env.SESSION_SECRET || 'default-secret-key';
+// const SECRET_KEY = process.env.SESSION_SECRET || 'default-secret-key';
 
-app.use(session({
-  secret: SECRET_KEY,
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+// app.use(session({
+//   secret: SECRET_KEY,
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { secure: true }
+// }));
 
 
 const db = mysql.createConnection({
@@ -235,39 +235,6 @@ app.get('/profile', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Example route to render the cart page with cart quantity
-app.get('/cart', (req, res) => {
-  // Get the user ID of the current user (assuming it's stored in req.user.id)
-  const userId = req.user.id;
-
-  // Query to fetch cart items for the current user from the database
-  const sql = 'SELECT COUNT(*) AS cartQuantity FROM cart_items WHERE user_id = ?';
-
-  // Execute the query with the user ID as a parameter
-  db.query(sql, [userId], (err, result) => {
-      if (err) {
-          console.error('Error fetching cart items:', err);
-          res.status(500).send('Error fetching cart items');
-          return;
-      }
-
-      // Extract cart quantity from the result
-      const cartQuantity = result[0].cartQuantity;
-
-      // Render the cart.ejs template with cart quantity
-      res.render('cart', { cartQuantity });
-  });
-});
 
 
 

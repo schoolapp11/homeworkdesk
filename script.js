@@ -178,20 +178,60 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 });
 
 
-// Function to generate a unique user ID
-function generateUserId() {
-  return 'user_' + Math.random().toString(36).substr(2, 9);
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if the user has an ID stored in local storage
+  let userId = localStorage.getItem('userId');
+  if (!userId) {
+      // If no ID exists, generate a new one
+      userId = generateUserId();
+      // Store the new ID in local storage
+      localStorage.setItem('userId', userId);
+  }
+
+  updateCartCount();
+
+
+  // Function to generate a unique user ID
+  function generateUserId() {
+      return 'user_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+  addToCartButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent default form submission
+          
+          const itemId = button.previousElementSibling.value; // Get item ID from hidden input
+          const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
+          const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
+          
+          // Retrieve existing cart items from local storage or initialize an empty array
+          let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+          
+          // Add the new item to the cart items array and associate it with the user ID
+          cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
+          
+          // Store the updated cart items array back in local storage
+          localStorage.setItem('cart', JSON.stringify(cartItems));
+          
+
+
+          updateCartCount();
+          // Optionally, provide visual feedback to the user (e.g., display a confirmation message)
+          alert('Item added to cart!');
+      });
+  });
+});
+
+
+function updateCartCount() {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cartItems.length;
+  document.getElementById('cart-count').textContent = cartCount;
 }
 
-// Check if the user has a stored identifier
-let userId = localStorage.getItem('userId');
 
-if (!userId) {
-  // If the identifier doesn't exist, generate a new one
-  userId = generateUserId();
-  // Store the new identifier
-  localStorage.setItem('userId', userId);
-}
-
-// Now you can use the userId variable for further operations
-console.log('User ID:', userId);

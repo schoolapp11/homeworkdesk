@@ -780,6 +780,20 @@ nav .nav-menu ul li a{
     
 }
 
+.cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart span{
+    color: #E8C872;
+    font-size: 14px; 
+    font-weight: bolder;
+    border-radius: 20rem; 
+    padding: 0.1rem 0.4rem;
+    margin-bottom: -1rem;
+}
+
 .second-container .tabs .tab .price{
     display: flex;
     justify-content: space-between;
