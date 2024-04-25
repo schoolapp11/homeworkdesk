@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const bcrypt = require('bcrypt');
 const app = express();
 const nodemailer = require('nodemailer');
@@ -26,7 +26,16 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  connectionLimit: 10 // Adjust as per your requirement
+  connectionLimit: 20 // Adjust as per your requirement
+});
+
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error('Error connecting to database:', err);
+    return;
+  }
+  console.log('Connected to database');
+  connection.release(); // Release the connection
 });
 
 // Route handler for GET request to /signup (render signup form)
@@ -120,34 +129,128 @@ function sendAccountCreationEmail(email) {
   });
 }
 
-// Other routes and handlers...
+
+//  "Hospital Consumables" category
+// app.get('/hospital-consumables', (req, res) => {
+//   // Query items from the database that belong to the "Hospital Consumables" category
+//   const categoryId = 'hospital_consumables'; // Assuming 'hospital_consumables' is the category ID
+//   const sql = 'SELECT * FROM items WHERE category_id = ?';
+//   db.query(sql, [categoryId], (err, items) => {
+//       if (err) {
+//           console.error('Error querying items:', err);
+//           res.status(500).send('Internal Server Error');
+//           return;
+//       }
+//       // Render a view/template (e.g., hospital-consumables.ejs) with the queried items
+//       res.render('hospital-consumables', { items });
+//   });
+// });
 
 
 
+// Route to handle adding an item
+app.post('/add-item', async (req, res) => {
+  const { id, name, price, description, category_id, image_url } = req.body;
+
+  // Log the details collected
+  console.log("Received item details:");
+  console.log("ID:", id);
+  console.log("Name:", name);
+  console.log("Price:", price);
+  console.log("Description:", description);
+  console.log("Category ID:", category_id);
+  console.log("Image URL:", image_url);
+
+  try {
+    // Get a connection from the pool
+    const connection = await pool.getConnection();
+
+    // Execute the query using the connection
+    const [results] = await connection.query(
+      'INSERT INTO items (id, name, price, description, category_id, image_url) VALUES (?, ?, ?, ?, ?, ?)',
+      [id, name, price, description, category_id, image_url]
+    );
+
+    // Release the connection back to the pool
+    connection.release();
+
+    // Redirect to a success page or display a success message
+    res.send('<script>alert("Item added successfully!"); window.location.href = "/";</script>');
+  } catch (error) {
+    console.error('Error adding item:', error);
+    // Display an error message as an alert on the screen
+    res.send('<script>alert("Failed to add item. Please try again later."); window.location.href = "/add-product";</script>');
+  }
+});
 
 
-app.get('/items', (req, res) => {
-  // Get the category ID from the query parameters
-  const categoryId = req.query.category;
+app.get('/items', async (req, res) => {
+  try {
+    // Get the category ID from the query parameters
+    const categoryId = req.query.category;
 
-  // Query items from the database that belong to the specified category
-  const sql = 'SELECT * FROM items WHERE category_id = ?';
-  db.query(sql, [categoryId], (err, items) => {
-      if (err) {
-          console.error('Error querying items:', err);
-          res.status(500).send('Internal Server Error');
-          return;
-      }
-      // Render the items.ejs template with the filtered items
-      res.render('items', { items });
-  });
+    // Query items from the database that belong to the specified category
+    const [rows] = await pool.query('SELECT * FROM items WHERE category_id = ?', [categoryId]);
+
+    // Render the items.ejs template with the filtered items
+    res.render('items', { items: rows });
+  } catch (error) {
+    console.error('Error querying items:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 
 
 
+// app.get('/items', (req, res) => {
+//   // Get the category ID from the query parameters
+//   const categoryId = req.query.category;
+
+//   // Query items from the database that belong to the specified category
+//   pool.getConnection((err, connection) => {
+//     if (err) {
+//       console.error('Error getting connection from pool:', err);
+//       res.status(500).send('Internal Server Error');
+//       return;
+//     }
+
+//     const sql = 'SELECT * FROM items WHERE category_id = ?';
+//     connection.query(sql, [categoryId], (err, items) => {
+//       connection.release(); // Release the connection back to the pool
+
+//       if (err) {
+//         console.error('Error querying items:', err);
+//         res.status(500).send('Internal Server Error');
+//         return;
+//       }
+
+//       // Render the items.ejs template with the filtered items
+//       res.render('items', { items });
+//     });
+//   });
+// });
 
 
+// app.get('/items', (req, res) => {
+//   // Get the category ID from the query parameters
+//   const categoryId = req.query.category;
+
+//   // Query items from the database that belong to the specified category
+//   const sql = 'SELECT * FROM items WHERE category_id = ?';
+//   db.query(sql, [categoryId], (err, items) => {
+//       if (err) {
+//           console.error('Error querying items:', err);
+//           res.status(500).send('Internal Server Error');
+//           return;
+//       }
+//       // Render the items.ejs template with the filtered items
+//       res.render('items', { items });
+//   });
+// });
+
+
+// Route to handle displaying user profile
 app.get('/profile', (req, res) => {
   // Check if the user is authenticated (check session data)
   if (req.session.user) {
@@ -161,68 +264,7 @@ app.get('/profile', (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route to handle adding a product
-app.post('/add-product', async (req, res) => {
-  const { id, name, price, description, category, image_url } = req.body;
-
-  try {
-    // Get a connection from the pool
-    pool.getConnection((err, connection) => {
-      if (err) {
-        console.error('Error getting database connection:', err);
-        res.status(500).send('Internal Server Error');
-        return;
-      }
-
-      // Execute the query using the connection
-      connection.query(
-        'INSERT INTO items (id, name, price, description, category_id, image_url) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, name, price, description, category, image_url],
-        (error, results) => {
-          // Release the connection back to the pool
-          connection.release();
-
-          if (error) {
-            console.error('Error adding product:', error);
-            // Display an error message as an alert on the screen
-            res.send('<script>alert("Failed to add product. Please try again later."); window.location.href = "/add-product";</script>');
-            return;
-          }
-
-          // Redirect to a success page or display a success message
-          res.send('<script>alert("Product added successfully!"); window.location.href = "/";</script>');
-        }
-      );
-    });
-  } catch (error) {
-    console.error('Error adding product:', error);
-    // Display an error message as an alert on the screen
-    res.send('<script>alert("Failed to add product. Please try again later."); window.location.href = "/add-product";</script>');
-  }
-});
-
-
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
-
-
-
-

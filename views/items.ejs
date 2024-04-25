@@ -41,12 +41,12 @@
         </div>
 
         
-        
+        <div id="toast"></div>
         
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', function() {
     // Check if the user has an ID stored in local storage
     let userId = localStorage.getItem('userId');
     if (!userId) {
@@ -58,7 +58,6 @@
 
     updateCartCount();
 
-
     // Function to generate a unique user ID
     function generateUserId() {
         return 'user_' + Math.random().toString(36).substr(2, 9);
@@ -67,39 +66,56 @@
     const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
     addToCartButtons.forEach(button => {
+        const itemId = button.previousElementSibling.value; // Get item ID from hidden input
+        
+        // Retrieve existing cart items from local storage or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Check if the item is already in the cart
+        const itemIndex = cartItems.findIndex(item => item.id === itemId);
+        if (itemIndex !== -1) {
+            // Item is in the cart, so update button style and text
+            button.textContent = 'REMOVE FROM CART'; // Change button text to "REMOVE FROM CART"
+            button.style.backgroundColor = '#E8C872'; // Change button background color
+        }
+
         button.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent default form submission
-            
-            const itemId = button.previousElementSibling.value; // Get item ID from hidden input
-            const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
-            const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
             
             // Retrieve existing cart items from local storage or initialize an empty array
             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
             
-            // Add the new item to the cart items array and associate it with the user ID
-            cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
+            // Check if the item is already in the cart
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex !== -1) {
+                // Item is already in the cart, so remove it
+                cartItems.splice(itemIndex, 1);
+                button.textContent = 'ADD TO CART'; // Change button text back to "ADD TO CART"
+                button.style.backgroundColor = '#0D7BD9'; // Change button background color back to default
+            } else {
+                // Item is not in the cart, so add it
+                const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
+                const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
+                cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
+                button.textContent = 'REMOVE FROM CART'; // Change button text to "REMOVE FROM CART"
+                button.style.backgroundColor = '#E8C872'; // Change button background color
+            }
             
             // Store the updated cart items array back in local storage
             localStorage.setItem('cart', JSON.stringify(cartItems));
-            
-
 
             updateCartCount();
             // Optionally, provide visual feedback to the user (e.g., display a confirmation message)
-            alert('Item added to cart!');
+            alert('Item updated in cart!');
         });
     });
+
+    function updateCartCount() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cartItems.length;
+        document.getElementById('cart-count').textContent = cartCount;
+    }
 });
-
-
-function updateCartCount() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartCount = cartItems.length;
-    document.getElementById('cart-count').textContent = cartCount;
-}
-
-
 
     </script>
 </body>
