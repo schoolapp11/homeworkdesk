@@ -203,52 +203,23 @@ app.get('/items', async (req, res) => {
 
 
 
-// app.get('/items', (req, res) => {
-//   // Get the category ID from the query parameters
-//   const categoryId = req.query.category;
-
-//   // Query items from the database that belong to the specified category
-//   pool.getConnection((err, connection) => {
-//     if (err) {
-//       console.error('Error getting connection from pool:', err);
-//       res.status(500).send('Internal Server Error');
-//       return;
-//     }
-
-//     const sql = 'SELECT * FROM items WHERE category_id = ?';
-//     connection.query(sql, [categoryId], (err, items) => {
-//       connection.release(); // Release the connection back to the pool
-
-//       if (err) {
-//         console.error('Error querying items:', err);
-//         res.status(500).send('Internal Server Error');
-//         return;
-//       }
-
-//       // Render the items.ejs template with the filtered items
-//       res.render('items', { items });
-//     });
-//   });
-// });
-
-
-// app.get('/items', (req, res) => {
-//   // Get the category ID from the query parameters
-//   const categoryId = req.query.category;
-
-//   // Query items from the database that belong to the specified category
-//   const sql = 'SELECT * FROM items WHERE category_id = ?';
-//   db.query(sql, [categoryId], (err, items) => {
-//       if (err) {
-//           console.error('Error querying items:', err);
-//           res.status(500).send('Internal Server Error');
-//           return;
-//       }
-//       // Render the items.ejs template with the filtered items
-//       res.render('items', { items });
-//   });
-// });
-
+app.get('/products/search', (req, res) => {
+  const { query } = req.query;
+  if (!query) {
+    return res.status(400).json({ error: 'Query parameter "query" is required' });
+  }
+  
+  // Query database for items matching the search query
+  const sql = `SELECT * FROM items WHERE name LIKE ? OR description LIKE ?`;
+  const params = [`%${query}%`, `%${query}%`];
+  connection.query(sql, params, (err, results) => {
+    if (err) {
+      console.error('Error executing database query: ' + err.stack);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+    res.json(results);
+  });
+});
 
 // Route to handle displaying user profile
 app.get('/profile', (req, res) => {

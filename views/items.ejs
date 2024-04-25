@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
+   
     <div class="mobile-search-bar"> 
         <input type="search" name="" id="" placeholder="Search...">
          
@@ -25,6 +26,7 @@
             
         </div>
     </div>
+    <button id="backToTopBtn" onclick="scrollToTop()">^^</button>
     <div class="item-body">
         <h2 style="color: #0D7BD9;">Items</h2>
         <div class="items-tab">
@@ -38,14 +40,35 @@
                     <button class="add-to-cart-button">ADD TO CART</button>
                 </div>
             <% }); %>
-        </div>
+        </div><br><br>
 
         
         <div id="toast"></div>
         
     </div>
-
+    <div class="bottom-menu">
+        <a href="index.html"><img src="./css/images/home.png" alt=""></a>
+        <a href="#"><img src="./css/images/cart.png" alt=""></a>
+        <a href="#"><img src="./css/images/account.png" alt=""></a>
+        <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
+      </div>
     <script>
+         var backToTopBtn = document.getElementById("backToTopBtn");
+
+// When the user scrolls down even a little bit, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+};
+
+// Scroll to the top of the document when the button is clicked
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
        document.addEventListener('DOMContentLoaded', function() {
     // Check if the user has an ID stored in local storage
     let userId = localStorage.getItem('userId');

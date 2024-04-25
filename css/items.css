@@ -134,3 +134,45 @@
 
 
 
+.bottom-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(200deg, #0043a7 0.9%, #0D7BD9 40.96%);
+    padding: 10px 0; 
+    text-align: center;
+    height: 2rem;
+  }
+
+  .bottom-menu a img{
+    width: 1.5rem;
+    margin-top: 5px ;
+  }
+  
+  .bottom-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 2rem;
+  }
+
+
+  #backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #181818a2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.8rem ;
+    font-size: 16px;
+    border-radius: 20rem;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  #backToTopBtn.show {
+    display: block;
+  }

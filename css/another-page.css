@@ -185,7 +185,7 @@
     text-align: center;
 }
 
-.hero-tabs1 .tab{
+.hero-tabs1 a .tab{
     padding: 1rem 2%;
     background-color: #ffffff;
     text-align: center;
@@ -193,12 +193,12 @@
     box-shadow: 2px 0px 7px #00000046;
 }
 
-.hero-tabs1 .tab img{
+.hero-tabs1 a .tab img{
     width: 6rem;
     height: 6rem;
 }
 
-.hero-tabs1 .tab p{
+.hero-tabs1 a .tab p{
     font-size: 10px;
     color: #0D7BD9;
 }
@@ -214,7 +214,7 @@
     text-align: center;
 }
 
-.hero-tabs2 .tab{
+.hero-tabs2 a .tab{
     padding: 1rem 2%;
     background-color: #ffffff;
     text-align: center;
@@ -222,12 +222,12 @@
     box-shadow: 2px 0px 7px #00000046;
 }
 
-.hero-tabs2 .tab img{
+.hero-tabs2 a .tab img{
     width: 6rem;
     height: 6rem;
 }
 
-.hero-tabs2 .tab p{
+.hero-tabs2 a .tab p{
     font-size: 10px;
     color: #0D7BD9;
 }

@@ -72,6 +72,11 @@
             <input type="search" name="" id="" placeholder="Search...">
             
         </div><br>
+        <!-- <form id="searchForm">
+            <input type="text" id="query" name="query" placeholder="Search products...">
+            <button type="submit">Search</button>
+          </form>
+          <div id="searchResults"></div> -->
 
 
 
@@ -652,6 +657,37 @@ function updateCartCount() {
     const cartCount = cartItems.length;
     document.getElementById('cart-count').textContent = cartCount;
 }
+
+const searchForm = document.getElementById('searchForm');
+    const searchResults = document.getElementById('searchResults');
+
+    searchForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const query = document.getElementById('query').value;
+
+      try {
+        const response = await fetch(`/products/search?query=${query}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch search results');
+        }
+        const data = await response.json();
+        displaySearchResults(data);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    function displaySearchResults(results) {
+      searchResults.innerHTML = '';
+      results.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.innerHTML = `
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+        `;
+        searchResults.appendChild(productElement);
+      });
+    }
 
    </script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
