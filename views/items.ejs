@@ -36,7 +36,7 @@
                         <div class="sep">
                             <img src="<%= items[j].image_url %>" alt="<%= items[j].name %> Image">
                             <h3><%= items[j].name %></h3>
-                            <!-- <p><strong>Description:</strong> <%= items[j].description %></p> -->
+                            <p><strong>Description:</strong> <%= items[j].description %></p>
                             <p class="price"><strong>Price:</strong> <%= items[j].price %></p>
                             <input type="hidden" class="item-id" value="<%= items[j].id %>">
                             <button class="add-to-cart-button">ADD TO CART</button>
@@ -73,7 +73,7 @@ function scrollToTop() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-       document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Check if the user has an ID stored in local storage
     let userId = localStorage.getItem('userId');
     if (!userId) {
@@ -123,7 +123,11 @@ function scrollToTop() {
                 // Item is not in the cart, so add it
                 const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
                 const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
-                cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
+                const itemImage = button.parentElement.querySelector('img').src; // Get item image URL
+
+                const itemDescription = button.parentElement.querySelector('p').textContent.trim();
+
+                cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId, image_url: itemImage, description: itemDescription });
                 button.textContent = 'REMOVE'; // Change button text to "REMOVE FROM CART"
                 button.style.backgroundColor = '#E8C872'; // Change button background color
             }
@@ -133,7 +137,7 @@ function scrollToTop() {
 
             updateCartCount();
             // Optionally, provide visual feedback to the user (e.g., display a confirmation message)
-            alert('Item updated in cart!');
+            
         });
     });
 
@@ -143,6 +147,9 @@ function scrollToTop() {
         document.getElementById('cart-count').textContent = cartCount;
     }
 });
+
+
+
 
     </script>
 </body>

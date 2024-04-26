@@ -14,9 +14,27 @@
 </head>
 <body>
     <h1>Shopping Cart</h1>
-    <p>Cart Quantity: <%= cartQuantity %></p>
+
+    <!-- <p>Cart Quantity: <span id="cart-count"><%= cartQuantity %></span></p> -->
 
 
+
+    <ul id="cartList">
+        <% if (cartItems && cartItems.length > 0) { %>
+            <% cartItems.forEach(function(item) { %>
+                <li>
+                    <div>
+                        <img src="<%= item.imageUrl %>" alt="<%= item.name %>" style="max-width: 100px;">
+                        <h3><%= item.name %></h3>
+                        <p>Price: $<%= item.price %></p>
+                        <p>Description: <%= item.description %></p>
+                    </div>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <li>No items in cart.</li>
+        <% } %>
+    </ul>
 
 
     <script>

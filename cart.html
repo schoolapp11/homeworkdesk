@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="../css/items.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="theme-color" 
+  content="#ffffff">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <div class="mobile-search-bar"> 
+        <input type="search" name="" id="" placeholder="Search...">
+         
+        <div id="cart-icon">
+            <div class="cart">
+                <span id="cart-count" style=" "></span>
+                <img src="./css/images/cart for menu.png" alt="">
+               
+            </div>
+            
+        </div>
+    </div>
+    <div class="item-body">
+        <h1>Shopping Cart</h1>
+
+    <div id="cartList">
+        <!-- Cart items will be dynamically inserted here -->
+    </div>
+    </div>
+    
+
+    <div class="bottom-menu">
+        <a href="index.html"><img src="./css/images/home.png" alt=""></a>
+        <a href="#"><img src="./css/images/cart.png" alt=""></a>
+        <a href="#"><img src="./css/images/account.png" alt=""></a>
+        <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
+      </div>
+    <script>
+       function displayCartItems() {
+    // Check if cart items exist in local storage
+    const cartItems = JSON.parse(localStorage.getItem('cart'));
+    if (cartItems && cartItems.length > 0) {
+        // Cart items exist, display them on the cart page
+        const cartList = document.getElementById('cartList');
+        cartList.innerHTML = ''; // Clear existing items
+        cartItems.forEach(function(item) {
+            const listItem = document.createElement('li');
+            const itemDetails = document.createElement('div');
+            itemDetails.innerHTML = `
+                <img src="${item.image_url}" alt="${item.name}" style="max-width: 100px;">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+                <p>Description: ${item.description}</p>
+            `;
+            listItem.appendChild(itemDetails);
+            cartList.appendChild(listItem);
+        });
+    } else {
+        // No cart items in local storage, display a message or handle as needed
+        console.log('No items in cart.');
+    }
+}
+
+// Call the function to display cart items when the cart page is loaded
+window.onload = function() {
+    displayCartItems();
+};
+
+    </script>
+</body>
+</html>

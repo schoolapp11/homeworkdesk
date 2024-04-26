@@ -161,7 +161,7 @@
 
     <div class="bottom-menu">
         <a href="index.html"><img src="./css/images/home.png" alt=""></a>
-        <a href="#"><img src="./css/images/cart.png" alt=""></a>
+        <a href="#"><button id="viewCartBtn"><img src="./css/images/cart.png" alt=""></button></a>
         <a href="#"><img src="./css/images/account.png" alt=""></a>
         <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
       </div>
@@ -240,6 +240,53 @@ function updateCartCount() {
     const cartCount = cartItems.length;
     document.getElementById('cart-count').textContent = cartCount;
 }
+
+document.getElementById('viewCartBtn').addEventListener('click', function() {
+    window.location.href = '/cart.html'; // Redirect to the cart page
+});
+
+// document.getElementById('viewCartBtn').addEventListener('click', function() {
+//     // Retrieve cart items from local storage
+//     const cartItems = JSON.parse(localStorage.getItem('cart'));
+//     // Send cart items to the server
+//     fetch('/cart', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ cartItems: cartItems })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         // Redirect to the cart page
+//         window.location.href = '/cart';
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// });
+
+
+// document.getElementById('viewCartBtn').addEventListener('click', function() {
+//     // Retrieve cart items from local storage
+//     const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+//     // Send cart items to the server
+//     fetch('/cart', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ cartItems: cartItems })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         // Redirect to the cart page
+//         window.location.href = '/cart';
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// });
 
       </script>
 

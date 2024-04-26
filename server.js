@@ -3,6 +3,8 @@ require('dotenv').config();
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcrypt');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 const nodemailer = require('nodemailer');
 
 app.set('view engine', 'ejs');
@@ -221,19 +223,23 @@ app.get('/products/search', (req, res) => {
   });
 });
 
-// Route to handle displaying user profile
-app.get('/profile', (req, res) => {
-  // Check if the user is authenticated (check session data)
-  if (req.session.user) {
-      // User is logged in
-      const username = req.session.user.username;
-      // Pass user information to the profile page
-      res.render('profile', { username });
-  } else {
-      // User is not logged in, redirect to login page
-      res.redirect('/login');
-  }
-});
+
+
+// // Route to render the cart page
+// app.get('/cart', (req, res) => {
+//   const cartItems = req.body.cartItems || []; // Default to an empty array if cartItems is not provided
+//   const cartQuantity = cartItems.length;
+//   res.render('cart', { cartItems: cartItems, cartQuantity: cartQuantity });
+// });
+
+// // Route to handle cart item submission
+// app.post('/cart', (req, res) => {
+//   // Retrieve cart items from the request body
+//   const cartItems = req.body.cartItems || [];
+//   res.json({ success: true });
+// });
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
