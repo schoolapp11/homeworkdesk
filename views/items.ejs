@@ -30,16 +30,20 @@
     <div class="item-body">
         <h2 style="color: #0D7BD9;">Items</h2>
         <div class="items-tab">
-            <% items.forEach(item => { %>
-                <div class="sep">
-                    <img src="<%= item.image_url %>" alt="<%= item.name %> Image">
-                    <h3><%= item.name %></h3>
-                    <p><strong>Description:</strong> <%= item.description %></p>
-                    <p class="price"><strong>Price:</strong> <%= item.price %></p>
-                    <input type="hidden" class="item-id" value="<%= item.id %>">
-                    <button class="add-to-cart-button">ADD TO CART</button>
+            <% for (let i = 0; i < items.length; i += 2) { %>
+                <div class="item-pair">
+                    <% for (let j = i; j < i + 2 && j < items.length; j++) { %>
+                        <div class="sep">
+                            <img src="<%= items[j].image_url %>" alt="<%= items[j].name %> Image">
+                            <h3><%= items[j].name %></h3>
+                            <!-- <p><strong>Description:</strong> <%= items[j].description %></p> -->
+                            <p class="price"><strong>Price:</strong> <%= items[j].price %></p>
+                            <input type="hidden" class="item-id" value="<%= items[j].id %>">
+                            <button class="add-to-cart-button">ADD TO CART</button>
+                        </div>
+                    <% } %>
                 </div>
-            <% }); %>
+            <% } %>
         </div><br><br>
 
         
@@ -98,7 +102,7 @@ function scrollToTop() {
         const itemIndex = cartItems.findIndex(item => item.id === itemId);
         if (itemIndex !== -1) {
             // Item is in the cart, so update button style and text
-            button.textContent = 'REMOVE FROM CART'; // Change button text to "REMOVE FROM CART"
+            button.textContent = 'REMOVE'; // Change button text to "REMOVE FROM CART"
             button.style.backgroundColor = '#E8C872'; // Change button background color
         }
 
@@ -120,7 +124,7 @@ function scrollToTop() {
                 const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
                 const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
                 cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
-                button.textContent = 'REMOVE FROM CART'; // Change button text to "REMOVE FROM CART"
+                button.textContent = 'REMOVE'; // Change button text to "REMOVE FROM CART"
                 button.style.backgroundColor = '#E8C872'; // Change button background color
             }
             

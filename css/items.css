@@ -79,8 +79,8 @@
     }
 
     .items-tab .sep img{
-        width: 10rem;
-        height: 8rem;
+        width: 9rem;
+        height: 7rem;
     }
 
     .items-tab .sep p{
@@ -99,9 +99,11 @@
         width: 100%;
         background-color: #0D7BD9;
         color: white;
-        padding: 0.6rem 1.5rem;
-        border-radius: 15px;
+        padding: 0.5rem 1.5rem;
+        border-radius: 10px;
+        font-weight: bold;
         border-style: none;
+        margin-top: 1rem;
     }
 
     .items-tab .sep button:hover{
@@ -110,7 +112,31 @@
     }
 }
 
+/* Style for item pairs */
+.item-pair {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: space-between;
+    gap: 10%; /* Space items evenly within the row */
+    margin-bottom: 20px; /* Add some margin between each pair of items */
+}
 
+/* Style for individual item */
+.sep {
+    width: calc(50% - 10px); /* Set width of each item to occupy half of the container width */
+    /* You can adjust the width and other styles as needed */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .item-pair {
+        flex-direction: row;
+         /* Switch to a column layout on smaller screens */
+    }
+
+    .sep {
+        width: 100%; /* Set width to full for each item on smaller screens */
+    }
+}
 
 @media only screen and (min-width: 1024px){
 
