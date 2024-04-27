@@ -108,7 +108,7 @@
 
     .items-tab .sep button:hover{
         background-color: #E8C872;
-        color: black;
+
     }
 }
 
@@ -160,6 +160,131 @@
 
 
 
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     /* Distribute items evenly across the container */
+}
+
+.product-pair {
+    display: flex;
+    width: 49%; /* Each product pair takes up almost half of the container width with a small gap */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.product {
+    width: 100%;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    /* border: 1px solid #ddd; /* Optional: Add a border to each product for better separation */
+    /* border-right: none; */ 
+    border-style: none;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.product h3 {
+    margin-top: 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+  #backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #181818a2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.8rem ;
+    font-size: 16px;
+    border-radius: 20rem;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  #backToTopBtn.show {
+    display: block;
+  }
+
+  .product-container .product button{
+    width: 100%;
+    background-color: #0D7BD9;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    border-style: none;
+    margin-top: 1rem;
+}
+
+
+  @media only screen and (max-width: 767px){
+    .item-body{
+        padding: 1rem 7%;
+        background-color: #cbe5fc;
+    }
+
+    .product-container{
+        width: 90%;
+        background-color: white;
+        border-radius: 15px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .product-container .product{
+        width: 100%;
+        margin-top: 1rem;
+        font-size: 12px;
+        line-height: 1rem;
+    }
+
+    .product-container .product img{
+        width: 9rem;
+        height: 7rem;
+    }
+
+    .product-container .product p{
+        text-align: left;
+    }
+    .product-container .product h3{
+        text-align: left;
+        font-weight: 300;
+    }
+
+    .product-container .product .price{
+        font-size: 13px;
+    }
+
+    .product-container .product button{
+        width: 100%;
+        background-color: #0D7BD9;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        font-weight: bold;
+        border-style: none;
+        margin-top: 1rem;
+    }
+
+    .product-container .product button:hover{
+        background-color: #E8C872;
+
+    }
+}
+
 .bottom-menu {
     position: fixed;
     left: 0;
@@ -180,25 +305,4 @@
     color: #fff;
     text-decoration: none;
     margin: 0 2rem;
-  }
-
-
-  #backToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    background-color: #181818a2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 0.8rem ;
-    font-size: 16px;
-    border-radius: 20rem;
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  #backToTopBtn.show {
-    display: block;
   }

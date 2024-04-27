@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-   
     <div class="mobile-search-bar"> 
         <input type="search" name="" id="" placeholder="Search...">
          
@@ -26,42 +25,42 @@
             
         </div>
     </div>
-    <button id="backToTopBtn" onclick="scrollToTop()">^^</button>
     <div class="item-body">
-        <h2 style="color: #0D7BD9;">Items</h2>
-        <div class="items-tab">
-            <% for (let i = 0; i < items.length; i += 2) { %>
+        <h1>All Products</h1>
+        <button id="backToTopBtn" onclick="scrollToTop()">^^</button>
+        <div class="product-container">
+            <% for (let i = 0; i < products.length; i += 2) { %>
                 <div class="item-pair">
-                    <% for (let j = i; j < i + 2 && j < items.length; j++) { %>
-                        <div class="sep">
-                            <img src="<%= items[j].image_url %>" alt="<%= items[j].name %> Image">
-                            <h3><%= items[j].name %></h3>
-                            <p><strong>Description:</strong> <%= items[j].description %></p>
-                            <p class="price"><strong>Price:</strong> <%= items[j].price %></p>
-                            <input type="hidden" class="item-id" value="<%= items[j].id %>">
+                    <% for (let j = i; j < i + 2 && j < products.length; j++) { %>
+                        <div class="product">
+                            <img src="<%= products[j].image_url %>" alt="<%= products[j].name %>">
+                            <h3><%= products[j].name %></h3>
+                            <p><strong>Description:</strong> <%= products[j].description %></p>
+                            <p class="price"><strong>Price:</strong> <%= products[j].price %></p>
+                            <input type="hidden" class="item-id" value="<%= products[j].id %>">
                             <button class="add-to-cart-button">ADD TO CART</button>
                         </div>
                     <% } %>
                 </div>
             <% } %>
-        </div><br><br>
-
-
+        </div>
         
-    </div>
+        
+    </div><br>
     <div class="bottom-menu">
         <a href="index.html"><img src="./css/images/home.png" alt=""></a>
         <a href="#"><button id="viewCartBtn" style="background-color: transparent; border-style: none;"><img src="./css/images/cart.png" alt=""></button></a>
         <a href="#"><img src="./css/images/account.png" alt=""></a>
         <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
-      </div>
-    <script>
-
+    </div>
+    
+<script>
 
 document.getElementById('viewCartBtn').addEventListener('click', function() {
     window.location.href = '/cart.html'; // Redirect to the cart page
 });
-         var backToTopBtn = document.getElementById("backToTopBtn");
+
+var backToTopBtn = document.getElementById("backToTopBtn");
 
 // When the user scrolls down even a little bit, show the button
 window.onscroll = function() {
@@ -154,7 +153,82 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+//     document.addEventListener('DOMContentLoaded', function() {
+//     let userId = localStorage.getItem('userId');
+//     if (!userId) {
+//         userId = generateUserId();
+//         localStorage.setItem('userId', userId);
+//     }
 
-    </script>
+//     // Your other code here
+// });
+
+//     document.addEventListener('DOMContentLoaded', function() {
+//     // Function to generate a unique user ID
+//     function generateUserId() {
+//         return 'user_' + Math.random().toString(36).substr(2, 9);
+//     }
+
+//     // Function to update the cart count
+//     function updateCartCount() {
+//         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+//         const cartCount = cartItems.length;
+//         document.getElementById('cart-count').textContent = cartCount;
+//     }
+
+//     // Add event listeners to "Add to Cart" buttons
+//     const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+//     addToCartButtons.forEach(button => {
+//         const itemId = button.previousElementSibling.value; // Get item ID from hidden input
+        
+//         // Retrieve existing cart items from local storage or initialize an empty array
+//         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        
+//         // Check if the item is already in the cart
+//         const itemIndex = cartItems.findIndex(item => item.id === itemId);
+//         if (itemIndex !== -1) {
+//             // Item is in the cart, so update button style and text
+//             button.textContent = 'REMOVE'; // Change button text to "REMOVE FROM CART"
+//             button.style.backgroundColor = '#E8C872'; // Change button background color
+//         }
+
+//         button.addEventListener('click', function(event) {
+//             event.preventDefault(); // Prevent default form submission
+            
+//             // Retrieve existing cart items from local storage or initialize an empty array
+//             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            
+//             // Check if the item is already in the cart
+//             const itemIndex = cartItems.findIndex(item => item.id === itemId);
+//             if (itemIndex !== -1) {
+//                 // Item is already in the cart, so remove it
+//                 cartItems.splice(itemIndex, 1);
+//                 button.textContent = 'ADD TO CART'; // Change button text back to "ADD TO CART"
+//                 button.style.backgroundColor = '#0D7BD9'; // Change button background color back to default
+//             } else {
+//                 // Item is not in the cart, so add it
+//                 const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
+//                 const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
+//                 const itemImage = button.parentElement.querySelector('img').src; // Get item image URL
+//                 const itemDescription = button.parentElement.querySelector('p').textContent.trim();
+
+//                 cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId, image_url: itemImage, description: itemDescription, quantity: 1 });
+//                 button.textContent = 'REMOVE'; // Change button text to "REMOVE FROM CART"
+//                 button.style.backgroundColor = '#E8C872'; // Change button background color
+//             }
+            
+//             // Store the updated cart items array back in local storage
+//             localStorage.setItem('cart', JSON.stringify(cartItems));
+
+//             updateCartCount();
+//             // Optionally, provide visual feedback to the user (e.g., display a confirmation message)
+//         });
+//     });
+
+//     // Initialize cart count
+//     updateCartCount();
+// });
+</script>
 </body>
 </html>

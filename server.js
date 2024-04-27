@@ -132,24 +132,6 @@ function sendAccountCreationEmail(email) {
 }
 
 
-//  "Hospital Consumables" category
-// app.get('/hospital-consumables', (req, res) => {
-//   // Query items from the database that belong to the "Hospital Consumables" category
-//   const categoryId = 'hospital_consumables'; // Assuming 'hospital_consumables' is the category ID
-//   const sql = 'SELECT * FROM items WHERE category_id = ?';
-//   db.query(sql, [categoryId], (err, items) => {
-//       if (err) {
-//           console.error('Error querying items:', err);
-//           res.status(500).send('Internal Server Error');
-//           return;
-//       }
-//       // Render a view/template (e.g., hospital-consumables.ejs) with the queried items
-//       res.render('hospital-consumables', { items });
-//   });
-// });
-
-
-
 // Route to handle adding an item
 app.post('/add-item', async (req, res) => {
   const { id, name, price, description, category_id, image_url } = req.body;
@@ -224,20 +206,22 @@ app.get('/products/search', (req, res) => {
 });
 
 
-
-// // Route to render the cart page
-// app.get('/cart', (req, res) => {
-//   const cartItems = req.body.cartItems || []; // Default to an empty array if cartItems is not provided
-//   const cartQuantity = cartItems.length;
-//   res.render('cart', { cartItems: cartItems, cartQuantity: cartQuantity });
-// });
-
-// // Route to handle cart item submission
-// app.post('/cart', (req, res) => {
-//   // Retrieve cart items from the request body
-//   const cartItems = req.body.cartItems || [];
-//   res.json({ success: true });
-// });
+// Route to fetch all products from the database
+app.get('/all-products', async (req, res) => {
+  try {
+    // Query all products from the database
+    const [rows] = await pool.query('SELECT * FROM items');
+    
+    // Randomize the order of products
+    const randomizedProducts = rows.sort(() => Math.random() - 0.5);
+    
+    // Render the all-products.ejs template with randomized products
+    res.render('all-products', { products: randomizedProducts });
+  } catch (error) {
+    console.error('Error querying products:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 
