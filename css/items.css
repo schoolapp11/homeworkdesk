@@ -293,11 +293,11 @@
     background: linear-gradient(200deg, #0043a7 0.9%, #0D7BD9 40.96%);
     padding: 10px 0; 
     text-align: center;
-    height: 2rem;
+    height: 1.5rem;
   }
 
   .bottom-menu a img{
-    width: 1.5rem;
+    width: 1.1rem;
     margin-top: 5px ;
   }
   

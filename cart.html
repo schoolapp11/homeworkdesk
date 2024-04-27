@@ -26,18 +26,18 @@
         </div>
     </div>
     <div class="item-body">
-        <h1>Shopping Cart</h1>
+        <h3 style="color: #0D7BD9;">Shopping cart</h3>
 
     <div id="cartList">
         <!-- Cart items will be dynamically inserted here -->
     </div>
-    </div>
+    </div><br>
 
 
-    <div class="products" id="products">
-        <!-- Products will be dynamically added here -->
-    </div>
     
+    <button id="checkoutButton" style="display: none ; padding: 0.5rem 1.5rem; border-radius: 10px; font-weight: bold; font-size: 15px; margin-left: 2rem; width: 80%; background-color:  #E8C872; color: #9b7610; border: solid 2px #9b7610;">Checkout</button>
+    <br><br>
+
 
     <div class="bottom-menu">
         <a href="index.html"><img src="./css/images/home.png" alt=""></a>
@@ -48,93 +48,111 @@
     <script>
 
 function displayCartItems() {
-    // Check if cart items exist in local storage
-    const cartItems = JSON.parse(localStorage.getItem('cart'));
-    if (cartItems && cartItems.length > 0) {
-        // Cart items exist, display them on the cart page
-        const cartList = document.getElementById('cartList');
-        cartList.innerHTML = ''; // Clear existing items
-        cartItems.forEach(function(item) {
-            const listItem = document.createElement('li');
-            const itemDetails = document.createElement('div');
-            itemDetails.innerHTML = `
-                <img src="${item.image_url}" alt="${item.name}" style="max-width: 100px;">
-                <h3>${item.name}</h3>
-                <p>Price: $${item.price}</p>
-                <p>Description: ${item.description}</p>
-                <button class="remove-from-cart-button" data-item-id="${item.id}">Remove</button>
-                <button class="increase-quantity-button" data-item-id="${item.id}">+</button>
-                <span class="quantity">${item.quantity}</span>
-                <button class="decrease-quantity-button" data-item-id="${item.id}">-</button>
-            `;
-            listItem.appendChild(itemDetails);
-            cartList.appendChild(listItem);
+            // Check if cart items exist in local storage
+            const cartItems = JSON.parse(localStorage.getItem('cart'));
+            if (cartItems && cartItems.length > 0) {
+                // Cart items exist, display them on the cart page
+                const cartList = document.getElementById('cartList');
+                cartList.innerHTML = ''; // Clear existing items
+                cartItems.forEach(function(item) {
+                    const listItem = document.createElement('div');
+                    const itemDetails = document.createElement('div');
+                    itemDetails.innerHTML = ` <br>
+                        <img src="${item.image_url}" alt="${item.name}" style="max-width: 100px; border: solid 2px #9b7610;">
+                        <h3 style="font-size:11px;">${item.name}</h3>
+                        <p style="font-size:11px;">Price: $${item.price}</p>
+                        <p style="font-size:11px; margin-bottom:0.3rem">Description: ${item.description}</p>
+                        <button style="padding: 0.5rem 1.5rem; border-radius: 20rem; color: #0D7BD9; border: solid 2px #0D7BD9; font-size:11px; font-weight: bold; " class="remove-from-cart-button" data-item-id="${item.id}">Remove</button>
+                        
+                        <button style="padding: 0.4rem; font-weight: bold; color: #0D7BD9; border: solid 2px #0D7BD9; font-size:11px; font-weight: bold;"  class="decrease-quantity-button" data-item-id="${item.id}">-</button>
+
+                        <span style="font-weight: bold; color:#0D7BD9; padding:0.5rem; font-size:11px; font-weight: bold;
+                        " class="quantity">${item.quantity}</span>
+
+                        <button style="padding: 0.4rem; font-weight: bold; color: #0D7BD9; border: solid 2px #0D7BD9; font-size:11px; font-weight: bold;" class="increase-quantity-button" data-item-id="${item.id}">+</button>
+
+                        <button style="padding: 0.5rem 1.5rem; background-color:#E8C872; color: black; border-style:none; border-radius: 20rem; border: solid 2px #9b7610; font-size:11px; font-weight: bold;"  class="buy-now-button" data-item-id="${item.id}">Buy Now</button>
+                    `;
+                    listItem.appendChild(itemDetails);
+                    cartList.appendChild(listItem);
+                });
+                // Show the checkout button since there are items in the cart
+                document.getElementById('checkoutButton').style.display = 'block';
+            } else {
+                // No cart items in local storage, display a message or handle as needed
+                console.log('No items in cart.');
+            }
+        }
+
+        // Event listeners for add, remove, increase, and decrease buttons
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('remove-from-cart-button')) {
+                const itemId = event.target.getAttribute('data-item-id');
+                removeFromCart(itemId);
+            }
+            if (event.target.classList.contains('buy-now-button')) {
+                const itemId = event.target.getAttribute('data-item-id');
+                buyNow(itemId);
+            }
+            // Other event listeners...
         });
-    } else {
-        // No cart items in local storage, display a message or handle as needed
-        console.log('No items in cart.');
-    }
-}
 
-// Function to add an item to the cart
-function addToCart(item) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const itemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
-    if (itemIndex !== -1) {
-        // Item already exists in cart, increase quantity
-        cartItems[itemIndex].quantity++;
-    } else {
-        // Item does not exist in cart, add it with quantity 1
-        item.quantity = 1;
-        cartItems.push(item);
-    }
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    displayCartItems(); // Update the cart display after adding item
-}
+        // Function to handle "Buy Now" action
+        function buyNow(itemId) {
+            // Add logic for "Buy Now" action, e.g., redirect to checkout page
+            console.log('Buy Now clicked for item:', itemId);
+        }
 
-// Function to remove an item from the cart
-function removeFromCart(itemId) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    cartItems = cartItems.filter(item => item.id !== itemId);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    displayCartItems(); // Update the cart display after removing item
-}
+        // Function to remove an item from the cart
+        function removeFromCart(itemId) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            displayCartItems(); // Update the cart display after removing item
+        }
 
-// Function to increase item quantity
-function increaseQuantity(itemId) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const itemIndex = cartItems.findIndex(item => item.id === itemId);
-    if (itemIndex !== -1) {
-        cartItems[itemIndex].quantity++;
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-        displayCartItems(); // Update the cart display after increasing quantity
-    }
-}
+        // Function to increase item quantity
+        function increaseQuantity(itemId) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex !== -1) {
+                cartItems[itemIndex].quantity++;
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                displayCartItems(); // Update the cart display after increasing quantity
+            }
+        }
 
-// Function to decrease item quantity
-function decreaseQuantity(itemId) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const itemIndex = cartItems.findIndex(item => item.id === itemId);
-    if (itemIndex !== -1 && cartItems[itemIndex].quantity > 1) {
-        cartItems[itemIndex].quantity--;
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-        displayCartItems(); // Update the cart display after decreasing quantity
-    }
-}
+        // Function to decrease item quantity
+        function decreaseQuantity(itemId) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex !== -1 && cartItems[itemIndex].quantity > 1) {
+                cartItems[itemIndex].quantity--;
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                displayCartItems(); // Update the cart display after decreasing quantity
+            }
+        }
 
-// Event listeners for add, remove, increase, and decrease buttons
+        // Function to handle checkout
+        document.getElementById('checkoutButton').addEventListener('click', function() {
+            // Add logic to handle checkout process
+            console.log('Checkout clicked');
+        });
+
+        // Call the function to display cart items when the cart page is loaded
+        window.onload = function() {
+            displayCartItems();
+        };
+
+        // Event listeners for add, remove, increase, and decrease buttons
 document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('add-to-cart-button')) {
-        const itemId = event.target.getAttribute('data-item-id');
-        const itemName = event.target.parentElement.querySelector('h3').textContent.trim();
-        const itemPrice = event.target.parentElement.querySelector('.price').textContent.trim();
-        const itemImage = event.target.parentElement.querySelector('img').src;
-        const itemDescription = event.target.parentElement.querySelector('p').textContent.trim();
-        addToCart({ id: itemId, name: itemName, price: itemPrice, image_url: itemImage, description: itemDescription });
-    }
     if (event.target.classList.contains('remove-from-cart-button')) {
         const itemId = event.target.getAttribute('data-item-id');
         removeFromCart(itemId);
+    }
+    if (event.target.classList.contains('buy-now-button')) {
+        const itemId = event.target.getAttribute('data-item-id');
+        buyNow(itemId);
     }
     if (event.target.classList.contains('increase-quantity-button')) {
         const itemId = event.target.getAttribute('data-item-id');
@@ -144,13 +162,8 @@ document.addEventListener('click', function(event) {
         const itemId = event.target.getAttribute('data-item-id');
         decreaseQuantity(itemId);
     }
+    // Other event listeners...
 });
-
-// Call the function to display cart items when the cart page is loaded
-window.onload = function() {
-    displayCartItems();
-};
-
 
 
          var backToTopBtn = document.getElementById("backToTopBtn");
