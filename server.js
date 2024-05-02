@@ -224,6 +224,83 @@ app.get('/all-products', async (req, res) => {
 });
 
 
+app.post('/checkout', async (req, res) => {
+  try {
+    // Extract user ID from the request body
+    const userId = req.body.userId;
+
+    // Query the database to check if the user exists
+    const [rows] = await pool.query('SELECT * FROM users WHERE user_id = ?', [userId]);
+
+    // Check if any rows were returned
+    if (rows.length > 0) {
+      // User exists in the database
+      res.json({ exists: true });
+    } else {
+      // User does not exist in the database
+      res.json({ exists: false });
+    }
+  } catch (error) {
+    console.error('Error checking user in database:', error);
+    res.status(500).send('Error checking user in database');
+  }
+});
+
+
+// Render profile.ejs when /profile route is accessed
+app.get('/all-products', (req, res) => {
+  res.render('all-products'); // Assuming profile.ejs is in your views directory
+});
+
+
+
+// // Endpoint to check if user exists in the database
+// app.post('/checkUser', (req, res) => {
+//   console.log('Received request to check user.');
+
+//   const userId = req.body.userId;
+//   console.log('User ID from request:', userId);
+
+//   pool.query('SELECT * FROM users WHERE user_id = ?', [userId], (error, results) => {
+//     if (error) {
+//       console.error('Error checking user in database:', error);
+//       res.status(500).send('Error checking user in database');
+//     } else {
+//       if (results.length > 0) {
+//         // User exists in database
+//         console.log('User exists in database');
+//         res.json({ exists: true });
+//       } else {
+//         // User does not exist in database
+//         console.log('User does not exist in database');
+//         res.json({ exists: false });
+//       }
+//     }
+//   });
+// });
+
+
+
+// // Endpoint to check if user exists in the database
+// app.post('/checkUser', (req, res) => {
+//   const userId = req.body.userId;
+//   pool.query('SELECT * FROM users WHERE user_id = ?', [userId], (error, results) => {
+//     if (error) {
+//       console.error('Error checking user in database:', error);
+//       res.status(500).send('Error checking user in database');
+//     } else {
+//       if (results.length > 0) {
+//         // User exists in database
+//         res.json({ exists: true });
+//       } else {
+//         // User does not exist in database
+//         res.json({ exists: false });
+//       }
+//     }
+//   });
+// });
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

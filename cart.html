@@ -25,6 +25,7 @@
             
         </div>
     </div>
+    <button id="backToTopBtn" onclick="scrollToTop()">^^</button>
     <div class="item-body">
         <h3 style="color: #0D7BD9;">Shopping cart</h3>
 
@@ -46,6 +47,50 @@
         <a href="/profile"><img src="./css/images/favourites.png" alt=""></a>
       </div>
     <script>
+
+
+
+
+
+
+
+document.getElementById('checkoutButton').addEventListener('click', function() {
+    // Get the user ID from local storage
+    const userId = localStorage.getItem('userId');
+
+    // Send the user ID to the backend for verification
+    fetch('/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId: userId })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.exists) {
+        // User exists in the database, proceed to checkout
+        window.location.href = '/checkout'; // Redirect to the checkout page
+      } else {
+        // User does not exist in the database, prompt to create an account
+        window.location.href = '/signup.html'; // Redirect to the sign up page
+      }
+    })
+    .catch(error => {
+      console.error('Error checking user in database:', error);
+    });
+  });
+
+
+
+
+
+
 
 function displayCartItems() {
             // Check if cart items exist in local storage
@@ -81,7 +126,7 @@ function displayCartItems() {
 
 // Display total cost
 const cartTotal = document.getElementById('cartTotal');
-cartTotal.textContent = `Total Cost: $${totalCost.toFixed(2)}`;
+cartTotal.textContent = ``;
                 // Show the checkout button since there are items in the cart
                 document.getElementById('checkoutButton').style.display = 'block';
             } else {
