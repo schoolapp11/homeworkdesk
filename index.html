@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nkwegu medicals</title>
+    <title>School app</title>
+    <meta name="theme-color" content="#1c1942">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="theme-color" 
@@ -16,680 +17,179 @@
 
    
 
-        <div class="subnav">
-            <p>When innovation meets good sales</p>
-            <div class="img">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAACVBMVEUAh1H///8AfDudGzJvAAABX0lEQVR4nO3QQQ0AIAzAwIF/0Yi4ZA/Sc9DObLlnzV2L2tM+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+0j7SPtI+8uW+B3AYRFPn9q1JAAAAAElFTkSuQmCC" alt="">
-            </div>
-        </div>
-        
-        <nav>
-            <div class="logo">
-                <img src="./css/images/nkmedicals logo.svg" alt="">
-            </div>
-            
-    
-            <div class="nav-menu">
-                <ul>
-                    <li><a href="" onclick="loadPage(event)">Products</a></li>
-                    <li><a href="./pageundercons.html" onclick="loadPage(event)">Consultancy</a></li>
-                    <li><a href="./pageundercons.html" onclick="loadPage(event)">Services</a></li>
-                    <li><a href="./pageundercons.html" onclick="loadPage(event)">Contact US</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="menu-bar" id="menuBar">
-            <div class="menu-content">
-              <button class="close-btn" onclick="closeMenu()">X</button><br>
-              <div class="logo">
-                <img src="./css/images/nkmedicals logo.svg" alt="">
-            </div>
-              <!-- Add menu items here -->
-              <a href="" onclick="loadPage(event)">Home</a>
-                <a href="./views/login.ejs" onclick="loadPage(event)">Login</a>
-                <a href="signup.html" onclick="loadPage(event)">Sign up</a>
-                <select name="" id="">
-                    <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
-                    <option value="Dentist" onclick="loadPage(event)">Dentist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Opthamologist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Oculist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Surgion</option>
-                    <option value="Dentist" onclick="loadPage(event)">Other....</option>
-                </select>
-                <a href="./pageundercons.html" onclick="loadPage(event)">Know us more</a>
-                <a href="./pageundercons.html" onclick="loadPage(event)">Awareness</a>
-                <a href="./pageundercons.html" onclick="loadPage(event)">Find a Location</a>
-                <a href="/all-products">Products</a>
-                    <a href="./pageundercons.html" onclick="loadPage(event)">Consultancy</a>
-                    <a href="./pageundercons.html" onclick="loadPage(event)">Services</a>
-                   <a href="./pageundercons.html" onclick="loadPage(event)">Contact US</a>
-            </div>
-          </div>
-          
-          <button class="open-btn" onclick="openMenu()"><img src="./css/images/menubutton.png" alt="" style="width: 2.5rem;"></button>
-        <div class="mobile-search-bar">
-            
-            <input type="search" name="" id="" placeholder="Search...">
-            
-        </div><br>
-        <!-- <form id="searchForm">
-            <input type="text" id="query" name="query" placeholder="Search products...">
-            <button type="submit">Search</button>
-          </form>
-          <div id="searchResults"></div> -->
-
-
-
-
-
-
-
-        <div class="menu-container">
-            <div class="menu-item"><a href="./views/login.ejs">Login</a></div>
-            <div class="menu-item"><a href="signup.html">Sign up</a></div>
-            <div class="menu-item">Find a Doctor</div>
-            <div class="menu-item">Get highered</div>
+    <div class="menu-bar" id="menuBar">
+        <div class="menu-content">
+          <button class="close-btn" onclick="closeMenu()"><div class="gradient-text">X</div></button><br>
+          <div class="logo">
+            <img src="./css/images/logo.svg" alt="">
+          </div><br>
+          <!-- Add menu items here -->
+          <a href="" onclick="loadPage(event)">Home</a>
+            <a href="./views/login.ejs" onclick="loadPage(event)">Login</a>
+            <a href="signup.html" onclick="loadPage(event)">Sign up</a>
+            <a href="./pageundercons.html" onclick="loadPage(event)">Know us more</a>
+            <a href="./pageundercons.html" onclick="loadPage(event)">Awareness</a>
+            <a href="./pageundercons.html" onclick="loadPage(event)">Find a Location</a>
             <a href="/all-products">Products</a>
-            <div class="menu-item">Categories</div>
-            <div class="menu-item">Discount sales</div>
-            <div class="menu-item">Consultancy</div>
-            <!-- Add more menu items as needed -->
-          </div>
-        
-
-
-
-
-
-
-        </div>
-        <div class="loading-line"></div>
-       <div class="first-container">
-        <div class="second-nav">
-            <ul>
-                <li><a href="" onclick="loadPage(event)">Home</a></li>
-                <li><a href="" onclick="loadPage(event)">Login</a></li>
-                <li><a href="signup.html" onclick="loadPage(event)">Sign up</a></li>
-                <li><select name="" id="">
-                    <option value="Dentist" onclick="loadPage(event)">Find a Doctor</option>
-                    <option value="Dentist" onclick="loadPage(event)">Dentist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Opthamologist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Oculist</option>
-                    <option value="Dentist" onclick="loadPage(event)">Surgion</option>
-                    <option value="Dentist" onclick="loadPage(event)">Other....</option>
-                </select></li>
-                <li><a href="./pageundercons.html" onclick="loadPage(event)">Know us more</a></li>
-                <li><a href="./pageundercons.html" onclick="loadPage(event)">Awareness</a></li>
-                <li><a href="./pageundercons.html" onclick="loadPage(event)">Find a Location</a></li>
-            </ul>
-        </div>
-        <div class="media-image">
-            <div class="desktop">
-                <img src="./css/images/first container image.svg" alt="">
-            </div>
-            <div class="mobile">
-                <img src="./css/images/mobile hero.png" alt="">
-            </div>
-        </div>
-        
-        <div class="hero">
-            <h1>
-                INNOVATIVE <br> Healthcare Excellence
-            </h1>
-            Your Source for Quality Medical Equipment & <br> Expert Assistance. <br><br>
-            <div class="sub-first-container">
-                <img src="./css/images/magnifying-glass_10949016.png" alt=""><p>I want to find</p><input type="search" name="" id="">
-            </div>
-        </div>
-       </div>
-       <div class="getstarted">
-        <button id="loadingButton1" onclick="startLoading('loadingButton1')">Start Shopping</button>
-       </div>
-       <br><br><br>
-    <div class="hotdeals">
-        <h3>Hot deals</h3>
-       <h5>This week's hot deals</h5>
-        <br>
-        <h3>Hospital Consumables</h3>
-       <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <!-- Loading spinner -->
-          <!-- <div class="loading-spinner"></div> -->
-          <!-- Initial images (up to 4) -->
-          <div class="swiper-slide"><img src="./css/images/blue latex glove.png" alt="Image 1"><p>Latex gloves</p></div>
-          <div class="swiper-slide"><img src="./css/images/syringe.png" alt="Image 2"><p>Syringe</p></div>
-          <div class="swiper-slide"><img src="https://www.polymedicure.com/wp-content/uploads/2019/05/polycath.jpg" alt="Image 3"><p>Cannula</p></div>
-          <div class="swiper-slide"><img src="https://www.santebene.com/wp-content/uploads/2021/07/PPE-3-Ply-Mask.jpg" alt="Image 4"><p>Facemask</p></div>
-          <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/proxy/jBiVTsHLXZXL3oXEaCXzZLtN_kJr8CG9jmus3pe7jls0Nef-5vQF5PHPuJtt-qvkDdoDRlQX_sOlfJNLCG7YoB9bxbl3i4DGbaYTRCJAHC0OBZuOORoxVIFSHkEyEllLJvA8mi94i-r4qO-Xgk8Kn0BJZKzVQ-di5yJd5kxq7r_3pRgp5YQy" alt="Image 4"><p>Catheter</p></div>
-          <div class="swiper-slide"><img src="https://www.leboo.com.cn/upload/2023/04/11/16811765598546lefw7.jpg" alt="Image 4"><p>Drapes</p></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Adhesive_tapes_clear.JPG" alt="Image 4"><p>Surgical Tapes</p></div>
-          <!-- Add more slides as needed -->
-        </div>
-        <!-- Pagination and navigation buttons -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-
-      <br>
-        <h3>Bedings and Transport</h3>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Loading spinner -->
-              <!-- <div class="loading-spinner"></div> -->
-              <!-- Initial images (up to 4) -->
-              <div class="swiper-slide"><img src="https://www.medik-medical.com/data/watermark/20200710/5f07db966d2fe.jpg" alt="Image 1"><p>Beds</p></div>
-              <div class="swiper-slide"><img src="https://assets.hillrom.com/is/image/hillrom/TransportStretcher_ai0242_0092?$pdpImage$" alt="Image 2"><p>Stretchers</p></div>
-              <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Servo_I_Ventilator.jpg" alt="Image 3"><p>Ventilators</p></div>
-              <div class="swiper-slide"><img src="https://img.medicalexpo.com/images_me/photo-g/122461-14510479.jpg" alt="Image 4"><p>IV bags</p></div>
-              <div class="swiper-slide"><img src="https://www.ehs.bg/wp-content/uploads/2020/12/Rectangle-16.jpg" alt="Image 4"><p>Wheel chairs</p></div>
-              <div class="swiper-slide"><img src="https://engiomed.ae/wp-content/uploads/2022/04/suction-machine.jpg" alt="Image 4"><p>Suction unit</p></div>
-              <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScUP2VBiKWKYUR2e3t6tQKt1X_sHyxXm_qI6SwOOZumeYeKLAJQG5Ik70lVx-GLQBAmi0&usqp=CAU" alt="Image 4"><p>Defibrillators</p></div>
-              <!-- Add more slides as needed -->
-            </div>
-            <!-- Pagination and navigation buttons -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div> 
-        </div>
-
-        <br>
-        <h3>Devices</h3>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Loading spinner -->
-              <!-- <div class="loading-spinner"></div> -->
-              <!-- Initial images (up to 4) -->
-              <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScUP2VBiKWKYUR2e3t6tQKt1X_sHyxXm_qI6SwOOZumeYeKLAJQG5Ik70lVx-GLQBAmi0&usqp=CAU" alt="Image 4"><p>Defibrillators</p></div>
-              <div class="swiper-slide"><img src="https://cdn.thewirecutter.com/wp-content/media/2021/05/24inchmonitors-2048px-9944.jpg?auto=webp&quality=75&crop=1.91:1&width=1200" alt="Image 2"><p>Computer monitor</p></div>
-              <div class="swiper-slide"><img src="https://lirp.cdn-website.com/81aad348/dms3rep/multi/opt/aim-58-medical-tablet-640w.png" alt="Image 3"><p>Tablets</p></div>
-              <div class="swiper-slide"><img src="https://static-assets.business.amazon.com/assets/in/28th-june/445_AB_Resize_Creatives_626x417_01.jpg.transform/width-2216/image.jpg" alt="Image 4"><p>BP aparatus</p></div>
-              <div class="swiper-slide"><img src="https://cdn.godrej.com/img/Product/637338036084629072_Medical-Equipment-Caibration-Pro.jpg" alt="Image 4"><p>Vital signs machine</p></div>
-              <!-- <div class="swiper-slide"><img src="https://www.leboo.com.cn/upload/2023/04/11/16811765598546lefw7.jpg" alt="Image 4"><p>Drapes</p></div>
-              <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Adhesive_tapes_clear.JPG" alt="Image 4"><p>Surgical Tapes</p></div> -->
-              <!-- Add more slides as needed -->
-            </div>
-            <!-- Pagination and navigation buttons -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div> 
-
-            
-        </div>
-    </div>   <br>
-    <div class="getstarted">
-        <button id="loadingButton2" onclick="startLoading('loadingButton2')">Start Shopping</button>
-    </div><br><br>
-       
-
-
-
-      </div>
-       <div class="mobile-why-choose-us">
-        <img src="./css/images/mobile display.png" alt="">
-       </div>
-
-       
-      
-
-       <div class="why-choose-us">
-        <p>Why choose us</p><br>
-        <div class="tabs">
-            <div class="tab">
-                <h3>Quality Products</h3><br>
-                <img src="./css/images/02-01 1.png" alt="">
-                <p>Our medical equipment undergoes rigorous testing to ensure superior quality, reliability, and safety, meeting the highest industry standards.</p>
-              </div>
-    
-              <div class="tab">
-                <h3>Affordable Solutions</h3><br>
-                <img src="./css/images/Frame 6.png" alt="">
-                <p>We offer competitively priced solutions without compromising on quality, making essential medical equipment and assistance accessible to all healthcare providers and facilities.</p>
-              </div>
-    
-            </div><br><br>
-    
-            <div class="tabs">
-                <div class="tab">
-                    <h3>Expert Guidance</h3><br>
-                    <img src="./css/images/Frame 7.png" alt="">
-                    <p>Our team of experienced professionals provides personalized guidance and support to help you make informed decisions tailored to your specific needs and requirements.</p>
-                </div>
-                <div class="tab">
-                  <h3>Exceptional Service</h3><br>
-                  <img src="./css/images/Frame 8.png" alt="">
-                  <p>We are committed to delivering exceptional service at every step, from product selection to after-sales support, ensuring a seamless and satisfactory experience for our customers.</p>
-                </div>
-            </div>
-    <br>
-            <div class="tabstand">
-                <div class="tab">
-                    <h3>Customer Satisfaction</h3><br>
-                    <img src="./css/images/Frame 9.png" alt="">
-                    <p>Customer satisfaction is our top priority. We strive to exceed expectations by delivering reliable products, expert guidance, and exceptional service, ensuring your complete satisfaction.</p>
-                  </div>
-            </div>
-        </div>
-       </div><br><br>
-    
-    
-       <div class="between-first-and-second-containers">
-        <!-- <div class="feedback-container">
-            <div class="feedback-slides">
-              <div class="feedback-slide">
-                <h2>Feedback 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div class="feedback-slide">
-                <h2>Feedback 2</h2>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div class="feedback-slide">
-                <h2>Feedback 3</h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              </div>
-            </div>
-          </div> -->
-          <div class="ts">
-            <div class="t">
-                <img src="./css/images/hand-soap_7499098.png" alt=""><br>Personl care
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/add_12235977.png" alt=""><br>Home health
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/lungs_8181479.png" alt=""><br>Respiratory
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/eye-test_8752170.png" alt=""><br>Eye care
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/medical-heart_7638479.png" alt=""><br>Heart health
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/stroller_3557945.png" alt=""><br>Child health
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/psychotherapy_8181560.png" alt=""><br>Personal care
-              </div>
-        
-              <div class="t">
-                <img src="./css/images/female_5534467.png" alt=""><br>Female health
-              </div>
-          </div>
-          
-          
-       </div>
-    
-    <div class="discount-boss">
-        <div class="discount">
-            <h2>25% OFF FREE DELIVERY ITEMS, 24/7 SERVICES</h2><br><a href="/all-products"><button>Place an order now -></button></a>
-        </div>
-    
-        <div class="customer">
-            <div class="ta">
-                <h3>2000+</h3>Order completed
-            </div>
-            <hr>
-            <div class="ta">
-                <h3>1200+</h3>Happy cutomers
-            </div>
-            <hr>
-            <div class="ta">
-                <h3>200+</h3>Medical products
-            </div>
-            <hr>
-            <div class="ta">
-                <h3>Free</h3>Home delivery
-            </div>
-        </div>
-          <br><br><br>
-    </div>
-       
-    
-    <div class="second-container">
-        <h2>Top selling</h2><br>
-    <div class="tabsgeneral">
-        <div class="tabs">
-            <div class="tab">
-                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-                <h3>Anasthetic machine</h3>
-                
-                <div class="price">
-                    <h4>Price :</h4><h3>100,000</h3><div class="add-to-cart">
-                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                    </div>
-                </div>
-                Dscription: Aesthetic machne for hospita use 
-    
-                
-            </div>
-    
-            <div class="tab">
-                <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
-                <h3>Home Use hospital bed</h3>
-                
-                <div class="price">
-                    <h4>Price :</h4><h3>90,000</h3><div class="add-to-cart">
-                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                    </div>
-                </div>
-                Description: Medycare Full Power Hospital Bed with Aluminum Railing Mattress for Home Use Care
-            </div>
-    
-            <div class="tab">
-                <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-                <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-                
-                <div class="price">
-                    <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                    </div>
-                </div>
-                Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-            </div>
-            
-            <div class="tab">
-                <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-                <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-                
-                <div class="price">
-                    <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                        <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                    </div>
-                </div>
-                Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-            </div>
-        </div>
-       </div>
-       <br><br>
-       <div class="tabs">
-        <div class="tab">
-            <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-            <h3>Anasthetic machine</h3>
-            
-            <div class="price">
-                <h4>Price :</h4><h3>100,000</h3><div class="add-to-cart">
-                    <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                </div>
-            </div>
-            Dscription: Aesthetic machne for hospita use 
-    
-            
-        </div>
-    
-        <div class="tab">
-            <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
-            <h3>Home Use hospital bed</h3>
-            
-            <div class="price">
-                <h4>Price :</h4><h3>90,000</h3><div class="add-to-cart">
-                    <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                </div>
-            </div>
-            Description: Medycare Full Power Hospital Bed with Aluminum Railing Mattress for Home Use Care
-        </div>
-    
-        <div class="tab">
-            <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-            <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-            
-            <div class="price">
-                <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                    <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                </div>
-            </div>
-            Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-        </div>
-    
-        <div class="tab">
-            <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-            <h3>Five Function Motorized Orthopedic Hospital Bed</h3>
-            
-            <div class="price">
-                <h4>Price :</h4><h3>95,000</h3><div class="add-to-cart">
-                    <button><img src="./css/images/add-cart_5567135.png" alt="" style="width: 2rem;"></button>
-                </div>
-            </div>
-            Description: YA-D5-9 Five Function Motorized Orthopedic Hospital Bed
-        </div>
-   
-  
-    
-    </div>
-    </div> 
-
-
-
-    <div class="mobile-topselling">
-        <h3 style="color: #074173;">Top selling</h3><br>
-        <div class="mobile-tabs">
-            <div class="mobile-tab">
-                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-                <h3>Anasthetic machine</h3>
-                <div class="price">
-                    <h3>100,000</h3><div class="add-to-cart">
-                       
-                    </div>
-                </div>
-                <p>Aesthetic machne for hospita use </p>
-            </div>
-            <div class="mobile-tab">
-                <img src="https://m.media-amazon.com/images/I/51Expw+8yvS._SL1000_.jpg" alt="Hospital bed"><br>
-                <h3>Home Use hospital bed</h3>
-                <div class="price">
-                    <h3>90,000</h3><div class="add-to-cart">
-                        
-                    </div>
-                </div>
-                
-                <p> Medycare Full Power Hospital Bed...</p>
-                
-            </div>
-        </div><br>
-        <div class="mobile-tabs">
-            <div class="mobile-tab">
-                <img src="https://www.medik-medical.com/data/watermark/20210118/60054e7668062.jpg" alt="Orthopedic Holpital bed"><br>
-                <h3>Five Function Motorized Orth..</h3>
-                
-                <div class="price">
-                    <h3>95,000</h3><div class="add-to-cart">
-                        
-                    </div>
-                </div>
-                
-                <p>Description: YA-D5-9 Five Function Motorized ... </p>
-            </div>
-            <div class="mobile-tab">
-                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-                <h3>Anasthetic machine</h3>
-                <div class="price">
-                    <h3>100,000</h3><div class="add-to-cart">
-                        
-                    </div>
-                </div>
-                <p>Aesthetic machne for hospita us</p>
-                
-            </div>
-        </div><br>
-        <div class="mobile-tabs">
-            <div class="mobile-tab">
-                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-                <h3>Anasthetic machine</h3>
-                <div class="price">
-                    <h3>100,000</h3><div class="add-to-cart">
-                        
-                    </div>
-                </div>
-                <p>Aesthetic machne for hospita use </p>
-            </div>
-            <div class="mobile-tab">
-                <img src="https://mindray.scene7.com/is/image/mindray/A5-with-N17-753x1024-753x1024-1?$image753-1024$" alt="Anasthetic machine"><br>
-                <h3>Anasthetic machine</h3>
-                <div class="price">
-                    <h3>100,000</h3><div class="add-to-cart">
-                        
-                    </div>
-                </div>
-                <p>Aesthetic machne for hospita us</p>
-                
-            </div>
+                <a href="./pageundercons.html" onclick="loadPage(event)">Consultancy</a>
+                <a href="./pageundercons.html" onclick="loadPage(event)">Services</a>
+               <a href="./pageundercons.html" onclick="loadPage(event)">Contact US</a>
         </div>
     </div>
+    <br><br>
+    <nav>
+    </nav>
+        <div class="logo"><img src="./css/images/logo.svg" alt=""></div>
+        <button class="open-btn" onclick="openMenu()"><img src="./css/images/menu.png" alt="" style="width: 2.5rem;"></button><br>
     
+     
     
-    
-    <footer>
-        <div class="logo-footer">
-            <div class="logo">
-                <img src="./css/images/nkmedicals logo2.svg" alt="">
+
+
+    <div class="mobile-search-bar">
+            
+        <input type="search" name="" id="" placeholder="Search...">
+        
+    </div><br>
+
+    <div class="carousel">
+        <img src="./css/images/intro1.png" alt="Image 1">
+        <img src="./css/images/intro2.png" alt="Image 2">
+        <img src="./css/images/intro3.png" alt="Image 3">
+        <!-- <img src="./css/images/dental-checkup_13463830.png" alt="Image 4"> -->
+    </div>
+
+    <div class="call-to-action">
+        <button>Hire a proffesional</button>
+    </div>
+<br>
+    <div class="guide">
+        <h3 style="color: #1c1942;">Things you can do</h3><br>
+        <div class="guide-tabs">
+            <div class="tab1">
+                <h3>Hire a proffesional</h3><br>
+                <img src="./css/images/man and young woman working.png" alt="">
+                    
+                    You can hire a guide to help with your academic difficulties with just a few clicks
+                </p><br>
+
+                <button>Hire now</button>
             </div>
-            <div class="social-media-links">
-               <p>Social media links </p> <img class="social" src="./css/images/facebook_5968764.png" alt=""><img class="social"  src="./css/images/instagram_2111463.png" alt=""><img class="social"  src="./css/images/whatsapp_5968841.png" alt="">
-            </div>
-            <div class="contact">
-                Phone Number: +2367234832 <br>
-                Email Address: nkmeds@gmail.com <br>
-                Address: No.4 NOrmally street <br> Abakaliki, Ebonyi state, Nigeria
-            </div>
-        </div><br><br>
-        <div class="logo-footer">
-            <div class="social-media-links">
-                <div class="links">
-                    <a href="">Home</a><br>
-               <a href="">About Us</a><br><a href="">Subscribe</a><br>
-               <a href="">FAQs</a><br><a href="">Terms of Service</a><br>
-               <a href="">LinkedIn</a><br><a href="">Privacy Policy</a><br>
-               <a href="">Return Policy</a>
-                </div>
-            </div>
-            <div class="contact">
-                    © 2024 Gideon Suite. All rights reserved
+            <div class="tab2">
+                <h3>Materials & Handouts</h3><br>
+                <img src="./css/images/top view of man sketching furniture.png" alt=""><p>
+                    You could search or scroll through available school materials for quizes or exams and yea, its free 
+                </p><br>
+
+                <button>Get now</button>
             </div>
         </div>
-        
-    </footer>
-      </div>
+
+        <div class="guide-tabs" style="">
+            <div class="tab2">
+                <h3>Become a worker</h3><br>
+                <img src="./css/images/young woman working at desk.png" alt=""><p>
+                    you could apply to become a hand for hire with us.
+                    and of course, you will be getting paid for any task completed
+                </p><br>
+
+                <button>Apply now</button>
+            </div>
+            <div class="tab1" style="display: flex;">
+            
+                <img src="./css/images/young man taking selfie.png" alt="" style="height: 13rem; ">
+
+                <p>
+                    The last you could do is to sit back and enjoy while our able hands work to deliver. its exciting to know we will bring your work to you.
+                </p>
+            </div>
+            
+        </div>
     
-  
-  
-   <script src="script.js"></script>
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-  var swiper = new Swiper('.swiper-container', {
-    loop: true,
-    slidesPerView: 4, // Display up to 4 images initially
-    spaceBetween: 20, // Adjust spacing between images
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-
-  // Hide loading spinner and show swiper container when images are loaded
-  swiper.on('imagesReady', function () {
-    document.querySelector('.loading-spinner').style.display = 'none';
-    document.querySelector('.swiper-container').style.visibility = 'visible';
-  });
-});
+        
+    </div><br>
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if the user has an ID stored in local storage
-    let userId = localStorage.getItem('userId');
-    if (!userId) {
-        // If no ID exists, generate a new one
-        userId = generateUserId();
-        // Store the new ID in local storage
-        localStorage.setItem('userId', userId);
-    }
 
-    updateCartCount();
+<footer>
+    <h3>HELLO!!</h3>
+    Welcome to Homework desk – the ultimate place where students help each other shine! We get it, juggling assignments, exams, and everything in between can be a lot. That’s why we’re here to make your academic life a little easier and a lot more awesome. <br><br>
 
+    <h4>What We Do:</h4> <br>
+    
+    🌟 Peer-to-Peer Help: Need a hand with that tricky assignment? Our platform connects you with your talented peers who are ready to help you out. Whether it’s math, history, or that really confusing essay, we’ve got you covered. <br><br>
+    
+    📚 Study Materials: Say goodbye to hunting for handouts! We’ve compiled all the best study materials and handouts in one place. Download everything you need to ace your exams and quizzes with ease. <br><br>
+    
+    💡 Bright Minds Unite: Are you the go-to person in your group for study help? Apply to join our team of student helpers and get recognized for your smarts! Plus, it’s a great way to earn some extra cash while making a difference. <br><br>
+    
+    <h4>Why choose us?</h4>
+    
+    By Students, For Students: We know what it’s like because we’re students too. We’ve built this platform to be exactly what we’d want – friendly, helpful, and super easy to use. <br>
+    Community Vibes: This is more than just a service; it’s a community. We’re all here to support each other and succeed together.
+    Flexibility: Whether you need help at 2 PM or 2 AM, there’s always someone around who’s got your back. <br><br>
+    So, dive in and explore! Whether you’re looking for help or ready to offer it, Student Assist Hub is your new best friend for all things academic. <br><br>
+    
+    Got questions or ideas? Hit us up! We love hearing from you.
+    
+    Stay awesome and study smart!
+    
+    The Student Assist Hub Team ✌️
 
-    // Function to generate a unique user ID
-    function generateUserId() {
-        return 'user_' + Math.random().toString(36).substr(2, 9);
-    }
-
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
-
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            const itemId = button.previousElementSibling.value; // Get item ID from hidden input
-            const itemName = button.parentElement.querySelector('h3').textContent.trim(); // Get item name
-            const itemPrice = button.parentElement.querySelector('.price').textContent.trim(); // Get item price
-            
-            // Retrieve existing cart items from local storage or initialize an empty array
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            // Add the new item to the cart items array and associate it with the user ID
-            cartItems.push({ id: itemId, name: itemName, price: itemPrice, userId: userId });
-            
-            // Store the updated cart items array back in local storage
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            
+    <br><br><textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="Your suggestions please....."></textarea>
+</footer>
 
 
-            updateCartCount();
-            // Optionally, provide visual feedback to the user (e.g., display a confirmation message)
-            alert('Item added to cart!');
-        });
-    });
-});
 
 
-function updateCartCount() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartCount = cartItems.length;
-    document.getElementById('cart-count').textContent = cartCount;
+    <script src="script.js"></script>
+    <script>
+        function openMenu() {
+  document.getElementById("menuBar").style.width = "85%";
 }
 
-const searchForm = document.getElementById('searchForm');
-    const searchResults = document.getElementById('searchResults');
+function closeMenu() {
+  document.getElementById("menuBar").style.width = "0";
+}
 
-    searchForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const query = document.getElementById('query').value;
 
-      try {
-        const response = await fetch(`/products/search?query=${query}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch search results');
+
+
+
+
+
+let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.querySelectorAll('.carousel img');
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
         }
-        const data = await response.json();
-        displaySearchResults(data);
-      } catch (error) {
-        console.error(error);
-      }
-    });
-
-    function displaySearchResults(results) {
-      searchResults.innerHTML = '';
-      results.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.innerHTML = `
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-        `;
-        searchResults.appendChild(productElement);
-      });
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
 
-   </script>
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeColor = '#1c194209'; // Replace with your desired color
+      const metaTag = document.querySelector('meta[name="theme-color"]');
+      
+      if (metaTag) {
+        metaTag.setAttribute('content', themeColor);
+      } else {
+        const newMetaTag = document.createElement('meta');
+        newMetaTag.setAttribute('name', 'theme-color');
+        newMetaTag.setAttribute('content', themeColor);
+        document.head.appendChild(newMetaTag);
+      }
+    });
+    </script>
 </body>
 </html>
