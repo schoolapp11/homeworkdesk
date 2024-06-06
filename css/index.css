@@ -27,7 +27,7 @@ body{
   
   .menu-content a {
     display: block;
-    color: #1c1942;
+    color: #2a285c;
     text-decoration: none;
     margin-bottom: 10px;
     font-weight: bold;
@@ -152,7 +152,7 @@ body{
     border-radius: 10px;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.267);
-    color: black;
+    color: #2a285c;
     text-align: center;
   }
 
@@ -220,7 +220,7 @@ body{
     border-radius: 1rem;
     font-size: 13px;
     background-color: white;
-    color: #1c1942;
+    color: #2a285c;
     
 }
 
@@ -266,7 +266,7 @@ body{
     padding: 1.5rem 1rem;
     border-radius: 1rem;
     font-size: 13px;
-    color: #1c1942;
+    color: #2a285c;
     background-color: white;
 }
 
@@ -306,4 +306,54 @@ footer textarea{
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.404);
     color: #1c1942;
+}
+
+.advert{
+    background-color: #1c194209;
+    padding: 1rem 1.5rem;
+}
+
+.hothead{
+    
+}
+
+.hothead-tabs{
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    gap: 2rem;
+    border-radius: 15px;
+}
+
+.hothead-tabs .image{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #41c569, #24803f);
+    border-radius: 20rem;
+    color: white;
+    padding: 2.5rem 2rem ;
+}
+
+.description h4{
+    color: #1c1942;
+}
+
+.description h5{
+    color: green;
+}
+
+.description button{
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    border-radius: 10rem;
+    border-style: none;
+    width: 100%;
+}
+
+.footer2{
+    background-color: #1c1942;
+    background: linear-gradient(90deg, #1c1942, #3b3586);
+    color: rgba(255, 255, 255, 0.829);
+    padding: 1rem 1.5em;
 }
