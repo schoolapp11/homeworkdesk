@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nkwegu medicals</title>
-    <link rel="stylesheet" href="./css/signup.css">
+    <title>Hoemworkdesk Login </title>
+    <meta name="theme-color" content="#1c1942">
+    <link rel="stylesheet" href="./css/forms.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="theme-color" 
   content="#ffffff">
@@ -13,41 +14,61 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <div class="logo">
-        <img src="./css/images/nkmedicals logo.svg" alt="">
-    </div><br>
-    <div class="menu-container">
-        <div class="menu-item">Login</div>
-        <div class="menu-item">Find a Doctor</div>
-        <div class="menu-item">Get highered</div>
-        <div class="menu-item">Products</div>
-        <div class="menu-item">Categories</div>
-        <div class="menu-item">Discount sales</div>
-        <div class="menu-item">Consultancy</div>
-        <!-- Add more menu items as needed -->
+    <div class="menu-bar" id="menuBar">
+        <div class="menu-content">
+          <button class="close-btn" onclick="closeMenu()"><div class="gradient-text">X</div></button><br>
+          <div class="logo">
+            <img src="./css/images/logo.svg" alt="">
+          </div><br>
+          <!-- Add menu items here -->
+            <a href="signup.html">Login</a>
+            <a href="index.html">Home</a>
+            <a href="./pageundercons.html" onclick="loadPage(event)">Know us more</a>
+               <a href="./pageundercons.html" onclick="loadPage(event)">Contact US</a>
+        </div>
     </div>
-    
-    <div class="form">
-        <h3>Sign Up</h3><br>
-        <form action="/signup" method="POST">
+    <br><br>
+    <nav>
+    </nav>
+        <div class="logo"><img src="./css/images/logo.svg" alt=""></div>
+        <button class="open-btn" onclick="openMenu()"><img src="./css/images/menu.png" alt="" style="width: 2.5rem;"></button><br>
 
-            <input type="text" id="username" name="username" placeholder="Preffered username..." required><br>
-            
-            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required><br>
 
-            <input type="email" id="email" name="email" placeholder="Email" required><br>
+        <div class="form">
+            <form action="">
+              <div class="logo">
+                <img src="./css/images/logo.svg" alt="">
+              </div><br>
+                <h3>CREATE ACCOUNT</h3><br>
+                <input type="text" placeholder="Email address"><br><br>
+                <input type="text" placeholder="Username"><br><br>
+                <input type="text" placeholder="Password"><br><br>
+                <input type="text" placeholder="Confirm Password"><br><br><br>
+                <button type="submit">Sign up</button>
+                <br><br>
+                
+                <br>
 
-            <input type="password" id="password" name="password" placeholder="Password" required><br><br>
-            <button type="submit">Sign Up</button><br><br>
-            <p>Already have an account, <a href="signin.html">SIGN IN</a></p>
-        </form>
-    </div>
-
-    <div class="bottom-menu">
-        <a href="index.html"><img src="./css/images/home.png" alt=""></a>
-        <a href="#"><img src="./css/images/cart.png" alt=""></a>
-        <a href="#"><img src="./css/images/account.png" alt=""></a>
-        <a href="exmple.html"><img src="./css/images/favourites.png" alt=""></a>
-    </div>
+                <div class="sub-text">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </form>
+        </div>
+        <script src="script.js"></script>
+        <script>
+             document.addEventListener('DOMContentLoaded', () => {
+      const themeColor = '#1c194209'; // Replace with your desired color
+      const metaTag = document.querySelector('meta[name="theme-color"]');
+      
+      if (metaTag) {
+        metaTag.setAttribute('content', themeColor);
+      } else {
+        const newMetaTag = document.createElement('meta');
+        newMetaTag.setAttribute('name', 'theme-color');
+        newMetaTag.setAttribute('content', themeColor);
+        document.head.appendChild(newMetaTag);
+      }
+    });
+        </script>
 </body>
 </html>

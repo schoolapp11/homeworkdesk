@@ -142,6 +142,21 @@ body{
 
   nav{
     display: flex;
+    gap :4rem;
+  }
+
+  nav button{
+    border: 1px solid #1c1942;
+    color: #1c1942;
+    font-weight: bold;
+    padding: 0rem 1.5rem;
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  nav button:hover{
+    background: linear-gradient(90deg, #1c1942, #171170);
+    color: white;
   }
 
   .mobile-search-bar{

@@ -65,7 +65,7 @@ body{
     font-weight: bold;
   }
 
-.menu-button {
+  .menu-button {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -142,40 +142,41 @@ body{
   }
 
   nav{
-    display: flex;
+    background-color: #1c1942;
+    position: fixed;
   }
 
-  .form{
-    text-align: center;
-    margin-top: 17%;
+
+  .body{
     padding: 0rem 1.5rem;
   }
 
-  form{
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    background: linear-gradient(90deg, #ff7f5f, #feb47bbd);
+  .name{
+    display: flex;
+    gap: 0.5rem;
+    color: #ff7f5f;
   }
 
-  form input{
-    padding: 0.5rem;
-    border-radius: 1rem;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.377);
-    border-style: none;
-    padding: 0.7rem;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    letter-spacing: 0.2rem;
+  .tab{
+    background: linear-gradient(90deg, #ff7f5f, #feb47bfd);
+    padding: 1rem;
+    border-radius: 10px;
+    color: #1c1942;
+    margin-bottom: 2rem;
+    font-size: 15px;
   }
 
-  form h3{
-    color: white;
+  .tab2{
+    background: linear-gradient(90deg, #ff7f5f, #feb47bfd);
+    padding: 1rem;
+    border-radius: 10px;
+    color: #1c1942;
+    margin-bottom: 2rem;
+    font-size: 15px;
   }
 
-  form button{
-    width: 50%;
+  .tab button{
+    width: 40%;
     font-weight: bold;
     color: #1c1942;
     font-size: 15px;
@@ -183,21 +184,27 @@ body{
     border-radius: 25px;
     border-style: none;
     background: linear-gradient(90deg, #f5f5fd, #feb47b);
+    margin-bottom: 0.5rem;
   }
 
-  form button:hover{
-    width: 60%;
+  .tab2 button{
+    width: 40%;
+    font-weight: bold;
+    color: #1c1942;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-style: none;
+    background: linear-gradient(90deg, #f5f5fd, #feb47b);
+    margin-bottom: 0.5rem;
+  }
+
+  .tab button:hover{
     background: linear-gradient(90deg, #1c1942, #171170);
     color: white;
   }
 
-  .sub-text{
-    font-size: 14px;
+  .tab2 button:hover{
+    background: linear-gradient(90deg, #1c1942, #171170);
     color: white;
-  }
-
-  .sub-text a{
-    color: #1c1942;
-    font-weight: bold;
-    text-decoration: none;
   }
